@@ -1,6 +1,22 @@
 module.exports = function(config){
   config.set({
 
+    preprocessors: {
+      '**/*.coffee': ['coffee']
+    },
+
+    coffeePreprocessor: {
+      // options passed to the coffee compiler
+      options: {
+        bare: true,
+        sourceMap: false
+      },
+      // transforming the filenames
+      transformPath: function(path) {
+        return path.replace(/\.coffee$/, '.js')
+      }
+    },
+
     basePath : './',
 
     files : [
@@ -8,7 +24,8 @@ module.exports = function(config){
       'app/bower_components/angular-route/angular-route.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/components/**/*.js',
-      'app/view*/**/*.js'
+      'app/view*/**/*.js',
+      'app/view*/**/*.coffee'
     ],
 
     autoWatch : true,
@@ -18,6 +35,7 @@ module.exports = function(config){
     browsers : ['Chrome'],
 
     plugins : [
+            'karma-coffee-preprocessor',
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
