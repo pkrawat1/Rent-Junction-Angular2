@@ -17,11 +17,19 @@ module.exports = function(grunt) {
         src: [ 'build' ]
       },
       stylesheets: {
-        src: [ 'build/**/*.css', '!build/application.css' ]
+        src: [ 'build/**/*.css', 'build/**/*.scss', '!build/application.css' , 'build/**/*.map']
       },
       scripts: {
         src: [ 'build/**/*.js', '!build/application.js' ]
       },
+    },
+
+    sass: {
+      dist: {
+        files: {
+          'build/app.css' : ['build/**/*.scss']
+        }
+      }
     },
 
     cssmin: {
@@ -70,7 +78,7 @@ module.exports = function(grunt) {
 
     watch: {
       stylesheets: {
-        files: 'app/**/*.css',
+        files: ['app/**/*.css', 'app/**/*.scss'],
         tasks: [ 'stylesheets' ]
       },
       scripts: {
@@ -108,6 +116,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // define the tasks
   grunt.registerTask(
@@ -119,7 +128,7 @@ module.exports = function(grunt) {
   grunt.registerTask(
     'stylesheets', 
     'Compiles the stylesheets.', 
-    [ 'cssmin', 'clean:stylesheets' ]
+    [ 'sass' , 'cssmin', 'clean:stylesheets' ]
   );
 
   grunt.registerTask(

@@ -1,5 +1,8 @@
 /* app css stylesheet */
 
+@import '../node_modules/foundation-sites/scss/foundation';
+//@import '../node_modules/foundation-sites/scss/normalize';
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -27,4 +30,8 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+
+.test {
+  color: red; 
 }

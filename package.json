@@ -16,6 +16,7 @@
     "grunt-contrib-cssmin": "0.6.x",
     "grunt-contrib-jade": "0.8.x",
     "grunt-contrib-jshint": "0.6.x",
+    "grunt-contrib-sass": "^0.9.2",
     "grunt-contrib-stylus": "0.8.x",
     "grunt-contrib-uglify": "0.2.x",
     "grunt-contrib-watch": "0.5.x",
@@ -42,5 +43,8 @@
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e-tests/protractor.conf.js",
     "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+  },
+  "dependencies": {
+    "foundation-sites": "^5.5.3"
   }
 }
