@@ -44,7 +44,7 @@ module.exports = function(grunt) {
       build: {
         expand: true,
         cwd: 'app',
-        src: [ '**/*.coffee' ],
+        src: [ '**/*.js.coffee' ],
         dest: 'build',
         ext: '.js'
       }
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'app',
-          src: [ '**/*.jade' ],
+          src: [ '**/*.html.jade' ],
           dest: 'build',
           ext: '.html'
         }]
