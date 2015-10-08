@@ -20,6 +20,7 @@ html.no-js(lang='en', ng-app='myApp')
     link(rel='stylesheet', href='application.css')
     // <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
     script(src="//localhost:35729/livereload.js")
+  
   body
     //if lt IE 7
       p.browsehappy
@@ -27,51 +28,21 @@ html.no-js(lang='en', ng-app='myApp')
         a(href='http://browsehappy.com/') upgrade your browser
         |  to improve your experience.
     
-    header.large-8.large-offset-2.small-10.small-offset-1.top-bar
-      // Title
-      ul.title-area
-        li.name
-          h1
-            a(href='#') Rent Junction
     
-    nav.large-8.large-offset-2.small-10.small-offset-1.top-bar(data-topbar='', role='navigation')
-      // Top Bar Section
-      section.top-bar-section
-        // Top Bar Left Nav Elements
-        ul.left
-          // Search | has-form wrapper
-          li.has-form
-            .row.collapse
-              .large-8.small-9.columns
-                input(type='text', placeholder='So, What are you waiting for?')
-              .large-4.small-3.columns
-                a.alert.button.expand(href='#') Search
-        // Top Bar Right Nav Elements
-        ul.right
-          // Divider
-          //li.divider
-          // Dropdown
-          li.has-dropdown.not-click
-            a(href='#') Select City
-          // Anchor
-          // Button
-          li.has-form.show-for-large-up
-            a.button.success(href='#') Sign Up
-          li.divider
-          li
-            a(href='#') Login In
-
-    section.main-body.large-8.large-offset-2.small-10.small-offset-1
-      div(ui-view='')
+    // include partials folder
+    // HEADER
+    include partials/_header.html.jade
+    // MAIN BODY
+    include partials/_main.html.jade
+    // FOOTER
+    include partials/_footer.html.jade
     
     //
       In production use:
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-    
     script(src='bower_components/angular/angular.js')
     script(src='bower_components/angular-ui-router/release/angular-ui-router.js')
     script(src='app.js')
     script(src='home/home.js')
-    
     // <script src="components/"></script>
 
