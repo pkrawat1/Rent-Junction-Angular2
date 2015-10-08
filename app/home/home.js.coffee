@@ -1,9 +1,9 @@
 'use strict'
 
-class App extends App('home') then constructor: -> return []
-
-class Home extends Config('home')
-  constructor: ($stateProvider) ->
+class HomeRoutes extends Config
+  constructor: ($stateProvider, $urlRouterProvider) ->
+    console.log('HomeRoutes')
+    $urlRouterProvider.otherwise '/home'
     $stateProvider
     .state 'home',{
       url: '/home',
