@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     copy: {
       build: {
         cwd: 'app',
-        src: [ '**', '!**/*.styl', '!**/*.coffee', '!**/*.jade' ],
+        src: [ '**', '!**/*.styl', '!**/*.coffee', '!**/*.jade', '!partials' ],
         dest: 'build',
         expand: true
       },
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         src: [ 'build/**/*.css', 'build/**/*.scss', '!build/application.css' , 'build/**/*.map']
       },
       scripts: {
-        src: [ 'build/**/*.js', '!build/application.js' ]
+        src: [ 'build/**/*.js.coffee', '!build/application.js' ]
       },
     },
 
@@ -43,10 +43,26 @@ module.exports = function(grunt) {
     coffee: {
       build: {
         expand: true,
-        cwd: 'app',
+        cwd: 'build',
         src: [ '**/*.js.coffee' ],
         dest: 'build',
         ext: '.js'
+      }
+    },
+
+    ngClassify: {
+      app: {
+          files: [
+              {
+                  cwd: 'app',
+                  src: [ '**/*.js.coffee' ],
+                  dest: 'build',
+                  expand: true
+              }
+          ],
+          options: {
+              appName: 'rntJuncApp'
+          }
       }
     },
 
@@ -69,7 +85,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'app',
-          src: [ '**/*.html.jade' ],
+          src: [ '**/*.html.jade', '!**/_*.html.jade' ],
           dest: 'build',
           ext: '.html'
         }]
@@ -120,12 +136,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-ng-classify');
 
   // define the tasks
   grunt.registerTask(
     'scripts', 
     'Compiles the JavaScript files.', 
-    [ 'coffee']//, 'clean:scripts']//, 'uglify']
+    [ 'ngClassify', 'coffee', 'clean:scripts']//, 'uglify']
   );
 
   grunt.registerTask(

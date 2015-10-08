@@ -1,11 +1,10 @@
 'use strict'
 # Declare app level module which depends on views, and components
-angular.module('myApp', [
+class App extends App then constructor: -> return [
   'ui.router'
-  'myApp.home'
-]).config [
-  '$stateProvider', '$urlRouterProvider',
-  ($stateProvider, $urlRouterProvider) ->
-    $urlRouterProvider.otherwise '/home'
-    return
+  'home'
 ]
+
+class Routes extends Config
+  contructor: ($urlRouterProvider) ->
+    $urlRouterProvider.otherwise '/home'
