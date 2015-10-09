@@ -6,7 +6,10 @@ module.exports = function(grunt) {
     copy: {
       build: {
         cwd: 'app',
-        src: [ '**', '!**/*.styl', '!**/*.coffee', '!**/*.jade', '!partials' ],
+        src: [
+          '**', '!**/*.styl', '!**/*.coffee', '!**/*.jade', '!partials',
+          '!**/*test.js.coffee'
+        ],
         dest: 'build',
         expand: true
       },
@@ -44,7 +47,7 @@ module.exports = function(grunt) {
       build: {
         expand: true,
         cwd: 'build',
-        src: [ '**/*.js.coffee' ],
+        src: [ '**/*.js.coffee', '!**/*test.js.coffee' ],
         dest: 'build',
         ext: '.js'
       }

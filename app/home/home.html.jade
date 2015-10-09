@@ -1,5 +1,4 @@
 div(ng-controller= 'homeController')
   ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
     li.th(ng-repeat= 'category in categories')
-      h4 {{category.name}}
-      p {{category.desc}}
+      show-category(category='category')
