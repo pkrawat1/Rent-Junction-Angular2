@@ -3,4 +3,10 @@
   hr
   ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5
     li.text-center(ng-repeat= 'category in categories')
-      show-category(category='category')
+      a(ng-click="showSubCategories($index)")
+        show-category(category= 'category')
+
+  ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5
+    li.text-center(ng-repeat= 'sub_category in category.sub_categories')
+      a
+        show-sub-category(subcategory= 'sub_category')

@@ -4,5 +4,5 @@ class ShowCategory extends Directive
     return {
       restrict: 'E'
       scope: category: '='
-      templateUrl: 'home/directives/category-directive.html'
+      templateUrl: 'home/directives/category.html'
     }
