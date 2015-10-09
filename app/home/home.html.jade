@@ -1,4 +1,6 @@
-div(ng-controller= 'homeController')
-  ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
-    li.th(ng-repeat= 'category in categories')
+.panel(ng-controller= 'homeController')
+  h5 To Buy or Find anything select an option below:
+  hr
+  ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5
+    li.text-center(ng-repeat= 'category in categories')
       show-category(category='category')
