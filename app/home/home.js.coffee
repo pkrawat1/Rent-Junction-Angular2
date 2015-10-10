@@ -7,7 +7,7 @@ class HomeRoutes extends Config
     .state 'home',{
       url: '/home'
       abstact: true
-      templateUrl: 'home/home.html'
+      templateUrl: 'templates/home.html'
     }
 
 class Home extends Controller
@@ -17,4 +17,4 @@ class Home extends Controller
       $scope.categories = data.categories
     
     $scope.showSubCategories = (index)->
-      $scope.category = $scope.categories[index]
+      $scope.selectedCategory = $scope.categories[index]

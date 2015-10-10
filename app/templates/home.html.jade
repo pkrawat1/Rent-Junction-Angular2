@@ -1,0 +1,28 @@
+.row(ng-controller= 'homeController')
+  
+  br
+  h5 To Buy or Find anything select an option below:
+  hr
+
+  ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5(
+    ng-show="!selectedCategory"
+    )
+    li.text-center(ng-repeat= 'category in categories')
+      a(ng-click="showSubCategories($index)")
+        show-category(category= 'category', selectedcategory= 'selectedCategory')
+
+  .row(ng-show='selectedCategory')
+    .large-3.columns
+      .icon-bar.vertical
+        a.item(
+          ng-click="showSubCategories($index)",
+          ng-repeat= 'category in categories',
+          ng-class= '{active: category === selectedCategory}'
+          )
+          show-category(category= 'category', selectedcategory= 'selectedCategory')
+
+    .large-9.columns
+      ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5
+        li.text-center(ng-repeat= 'sub_category in selectedCategory.sub_categories')
+          a
+            show-sub-category(subcategory= 'sub_category')

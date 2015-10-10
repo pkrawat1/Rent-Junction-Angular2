@@ -2,7 +2,7 @@ module.exports = function(config){
   config.set({
 
     preprocessors: {
-      '**/*.coffee': ['coffee']
+      '**/*.js.coffee': ['coffee']
     },
 
     coffeePreprocessor: {
@@ -13,7 +13,7 @@ module.exports = function(config){
       },
       // transforming the filenames
       transformPath: function(path) {
-        return path.replace(/\.coffee$/, '.js')
+        return path.replace(/\.js\.coffee$/, '.js')
       }
     },
 

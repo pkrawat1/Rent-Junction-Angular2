@@ -4,5 +4,5 @@ class ShowSubCategory extends Directive
     return {
       restrict: 'E'
       scope: subcategory: '='
-      templateUrl: 'home/directives/sub-category.html'
+      templateUrl: 'templates/sub-category.html'
     }
