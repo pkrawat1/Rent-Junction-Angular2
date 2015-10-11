@@ -2,5 +2,8 @@ img(
   ng-src= 'http://localhost:3000/{{category.logo.thumb.url}}',
   ng-show= '!selectedcategory'
   )
+
+h5(ng-if= '!selectedcategory') {{category.name}}
+
 strong
-  label {{category.name}}
+  label(ng-if= 'selectedcategory') {{category.name}}
