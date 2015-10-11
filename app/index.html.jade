@@ -41,7 +41,12 @@ html.no-js(lang='en', ng-app='rntJuncApp')
       In production use:
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
     script(src='bower_components/angular/angular.js')
-    script(src='bower_components/angular-ui-router/release/angular-ui-router.js')
+    script(src='bower_components/angular-ui-router/release/angular-ui-router.min.js')
+
+    // ngFx required Animation Libraries
+    script(src='bower_components/gsap/src/minified/TweenMax.min.js')
+    script(src='bower_components/ngFx/dist/ngFx.min.js')
+    script(src='bower_components/angular-animate/angular-animate.js')
     
     // Modules
     script(src='app.js')

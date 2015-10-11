@@ -7,12 +7,12 @@
   ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5(
     ng-show="!selectedCategory"
     )
-    li.text-center(ng-repeat= 'category in categories')
+    li.text-center.fx-fade-down.fx-speed-500(ng-repeat= 'category in categories')
       a(ng-click="showSubCategories($index)")
         show-category(category= 'category', selectedcategory= 'selectedCategory')
 
-  .row(ng-show='selectedCategory')
-    .large-3.columns
+  .row
+    .large-3.columns.fx-fade-right.fx-speed-500(ng-show='selectedCategory')
       .icon-bar.vertical
         a.item(
           ng-click="showSubCategories($index)",
@@ -21,8 +21,11 @@
           )
           show-category(category= 'category', selectedcategory= 'selectedCategory')
 
-    .large-9.columns
+    .large-9.columns.fx-fade-left.fx-easing-sine.fx-speed-500.fx-trigger(ng-show='selectedCategory')
       ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5
-        li.text-center(ng-repeat= 'sub_category in selectedCategory.sub_categories')
+        li.text-center.fx-fade-left.fx-easing-sine.fx-speed-500(
+          ng-show= 'true'
+          ng-repeat= 'sub_category in selectedCategory.sub_categories'
+          )
           a
             show-sub-category(subcategory= 'sub_category')
