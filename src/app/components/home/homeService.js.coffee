@@ -1,6 +1,6 @@
 # Request for Categories and subcategories
 
-class Categories extends Service
+class Home extends Service
   constructor: ($http) ->
     return $http.get(postCommentUrl = "http://localhost:3000/categories")
       .success (data) ->

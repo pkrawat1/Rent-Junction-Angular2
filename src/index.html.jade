@@ -49,13 +49,18 @@ html.no-js(lang='en', ng-app='rntJuncApp')
     script(src='bower_components/angular-animate/angular-animate.js')
     
     // Modules
-    script(src='app.js')
-    script(src='home/home.js')
+    script(src='app/app.js')
+
+    //Routes
+    script(src='app/components/home/homeRoutes.js')
     
     //Services
-    script(src='components/services/categories.js')
+    script(src='app/components/home/homeService.js')
+
+    //Controllers
+    script(src='app/components/home/homeController.js')
 
     //Directives
-    script(src='components/directives/category.js')
-    script(src='components/directives/sub-category.js')
+    script(src='app/shared/category/CategoryDirective.js')
+    script(src='app/shared/sub-category/subCategoryDirective.js')
 

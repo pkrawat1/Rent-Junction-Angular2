@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
     copy: {
       build: {
-        cwd: 'app',
+        cwd: 'src',
         src: [
           '**', '!**/*.styl', '!**/*.coffee', '!**/*.jade', '!partials',
           '!**/*test.js.coffee'
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
       app: {
           files: [
               {
-                  cwd: 'app',
+                  cwd: 'src',
                   src: [ '**/*.js.coffee' ],
                   dest: 'build',
                   expand: true
@@ -87,7 +87,7 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          cwd: 'app',
+          cwd: 'src',
           src: [ '**/*.html.jade', '!**/_*.html.jade' ],
           dest: 'build',
           ext: '.html'
@@ -100,19 +100,19 @@ module.exports = function(grunt) {
         livereload: true,
       },
       stylesheets: {
-        files: ['app/**/*.css', 'app/**/*.scss'],
+        files: ['src/**/*.css', 'src/**/*.scss'],
         tasks: [ 'stylesheets' ]
       },
       scripts: {
-        files: 'app/**/*.coffee',
+        files: 'src/**/*.coffee',
         tasks: [ 'scripts' ]
       },
       jade: {
-        files: 'app/**/*.jade',
+        files: 'src/**/*.jade',
         tasks: [ 'jade' ]
       },
       copy: {
-        files: [ 'app/**', '!app/**/*.styl', '!app/**/*.coffee', '!app/**/*.jade' ],
+        files: [ 'src/**', '!src/**/*.styl', '!src/**/*.coffee', '!src/**/*.jade' ],
         tasks: [ 'copy' ]
       }
     },
@@ -122,7 +122,7 @@ module.exports = function(grunt) {
         options: {
           port: 4000,
           base: 'build',
-          hostname: '*'
+          hostname: '0.0.0.0'
         }
       }
     }
@@ -161,7 +161,7 @@ module.exports = function(grunt) {
     );
 
   grunt.registerTask(
-    'default', 
+    'serve', 
     'Watches the project for changes, automatically builds them and runs a server.', 
     [ 'build', 'connect', 'watch' ]
   );

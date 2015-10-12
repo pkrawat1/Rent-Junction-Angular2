@@ -7,5 +7,5 @@ class ShowCategory extends Directive
         category: '='
         selectedcategory: '='
       }
-      templateUrl: 'templates/category.html'
+      templateUrl: 'app/shared/category/categoryView.html'
     }

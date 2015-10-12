@@ -4,5 +4,5 @@ class ShowSubCategory extends Directive
     return {
       restrict: 'E'
       scope: subcategory: '='
-      templateUrl: 'templates/sub-category.html'
+      templateUrl: 'app/shared/sub-category/subCategoryView.html'
     }
