@@ -2,7 +2,7 @@
 
 class Home extends Service
   constructor: ($http) ->
-    return $http.get(postCommentUrl = "http://localhost:3000/categories")
+    return $http.get(postCommentUrl = "https://rntjunc.firebaseio.com/categories.json")
       .success (data) ->
         data
       .error (err) ->
