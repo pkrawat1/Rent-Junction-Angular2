@@ -4,4 +4,5 @@ class App extends App then constructor: -> return [
   'ui.router'
   'ngFx'
   'ngAnimate'
+  'firebase'
 ]

@@ -15,6 +15,7 @@
     "ngFx": "~1.1.0",
     "gsap": "greensock#~1.18.0",
     "angular-animate": "~1.4.7",
-    "firebase": "~2.3.1"
+    "firebase": "~2.3.1",
+    "angularfire": "~1.1.3"
   }
 }

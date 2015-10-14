@@ -1,0 +1,215 @@
+[
+  {
+    "desc": "For Electronics Items",
+    "logo": {
+      "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000000/1444406014_latop.png",
+      "thumb": {
+        "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000000/thumb_1444406014_latop.png"
+      }
+    },
+    "name": "Electronics",
+    "s_name": "Electronics",
+    "sub_categories": [
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000001/1444473113_PC_in_blue.png",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000001/thumb_1444473113_PC_in_blue.png"
+          }
+        },
+        "name": "Computer",
+        "_id": "5610b4fdecb9e2131c000001",
+        "category_id": "5610b4fdecb9e2131c000000"
+      },
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000002/1444219711_washing_machine.png",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000002/thumb_1444219711_washing_machine.png"
+          }
+        },
+        "name": "Washing Machine",
+        "_id": "5610b4fdecb9e2131c000002",
+        "category_id": "5610b4fdecb9e2131c000000"
+      }
+    ],
+    "_id": "5610b4fdecb9e2131c000000"
+  },
+  {
+    "desc": "From Novels to Sciefy",
+    "logo": {
+      "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000005/1444218705_blog.png",
+      "thumb": {
+        "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000005/thumb_1444218705_blog.png"
+      }
+    },
+    "name": "Books",
+    "s_name": "Books",
+    "sub_categories": [
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000006/letteratura.png",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000006/thumb_letteratura.png"
+          }
+        },
+        "name": "literature",
+        "_id": "5610b4fdecb9e2131c000006",
+        "category_id": "5610b4fdecb9e2131c000005"
+      },
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000007/421517868_506aaa3bec.jpg",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000007/thumb_421517868_506aaa3bec.jpg"
+          }
+        },
+        "name": "Sciefy",
+        "_id": "5610b4fdecb9e2131c000007",
+        "category_id": "5610b4fdecb9e2131c000005"
+      },
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000008/cat.gif",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000008/thumb_cat.gif"
+          }
+        },
+        "name": "Programming",
+        "_id": "5610b4fdecb9e2131c000008",
+        "category_id": "5610b4fdecb9e2131c000005"
+      }
+    ],
+    "_id": "5610b4fdecb9e2131c000005"
+  },
+  {
+    "desc": "From table to diwan",
+    "logo": {
+      "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c00000a/1444219487_sofa-chair.png",
+      "thumb": {
+        "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c00000a/thumb_1444219487_sofa-chair.png"
+      }
+    },
+    "name": "Furniture",
+    "s_name": "Furniture",
+    "sub_categories": [
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000c/1444219487_sofa-chair.png",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000c/thumb_1444219487_sofa-chair.png"
+          }
+        },
+        "name": "Sitting",
+        "_id": "5610b4fdecb9e2131c00000c",
+        "category_id": "5610b4fdecb9e2131c00000a"
+      },
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000d/diwan.jpg",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000d/thumb_diwan.jpg"
+          }
+        },
+        "name": "diwan",
+        "_id": "5610b4fdecb9e2131c00000d",
+        "category_id": "5610b4fdecb9e2131c00000a"
+      },
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000e/wardrobe.png",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000e/thumb_wardrobe.png"
+          }
+        },
+        "name": "cupboard",
+        "_id": "5610b4fdecb9e2131c00000e",
+        "category_id": "5610b4fdecb9e2131c00000a"
+      }
+    ],
+    "_id": "5610b4fdecb9e2131c00000a"
+  },
+  {
+    "desc": "All type of cars",
+    "logo": {
+      "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c00000f/1444405765_pen_stroke_sketch_doodle_lineart_146.png",
+      "thumb": {
+        "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c00000f/thumb_1444405765_pen_stroke_sketch_doodle_lineart_146.png"
+      }
+    },
+    "name": "Vehicles",
+    "s_name": "Vehicles",
+    "sub_categories": [
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000011/1444472772_car.png",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000011/thumb_1444472772_car.png"
+          }
+        },
+        "name": "Compact Cars",
+        "_id": "5610b4fdecb9e2131c000011",
+        "category_id": "5610b4fdecb9e2131c00000f"
+      },
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000013/1444472707_pen_stroke_sketch_doodle_lineart_88.png",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000013/thumb_1444472707_pen_stroke_sketch_doodle_lineart_88.png"
+          }
+        },
+        "name": "Bicycle",
+        "_id": "5610b4fdecb9e2131c000013",
+        "category_id": "5610b4fdecb9e2131c00000f"
+      }
+    ],
+    "_id": "5610b4fdecb9e2131c00000f"
+  },
+  {
+    "desc": "All Medical Items",
+    "logo": {
+      "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000014/1444405665_7.png",
+      "thumb": {
+        "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000014/thumb_1444405665_7.png"
+      }
+    },
+    "name": "Medical Instruments",
+    "s_name": "MI",
+    "sub_categories": [
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000015/1444430434_wheelchair.png",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000015/thumb_1444430434_wheelchair.png"
+          }
+        },
+        "name": "Wheel chairs",
+        "_id": "5610b4fdecb9e2131c000015",
+        "category_id": "5610b4fdecb9e2131c000014"
+      },
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000016/1444430230_8.png",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000016/thumb_1444430230_8.png"
+          }
+        },
+        "name": "beds",
+        "_id": "5610b4fdecb9e2131c000016",
+        "category_id": "5610b4fdecb9e2131c000014"
+      },
+      {
+        "logo": {
+          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000017/1444430380_Microscope.png",
+          "thumb": {
+            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000017/thumb_1444430380_Microscope.png"
+          }
+        },
+        "name": "Microscopes",
+        "_id": "5610b4fdecb9e2131c000017",
+        "category_id": "5610b4fdecb9e2131c000014"
+      }
+    ],
+    "_id": "5610b4fdecb9e2131c000014"
+  }
+]
