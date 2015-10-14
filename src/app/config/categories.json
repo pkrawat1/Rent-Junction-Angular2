@@ -2,9 +2,9 @@
   {
     "desc": "For Electronics Items",
     "logo": {
-      "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000000/1444406014_latop.png",
+      "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444406014_latop.png",
       "thumb": {
-        "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000000/thumb_1444406014_latop.png"
+        "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444406014_latop.png"
       }
     },
     "name": "Electronics",
@@ -12,9 +12,9 @@
     "sub_categories": [
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000001/1444473113_PC_in_blue.png",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444473113_PC_in_blue.png",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000001/thumb_1444473113_PC_in_blue.png"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444473113_PC_in_blue.png"
           }
         },
         "name": "Computer",
@@ -23,9 +23,9 @@
       },
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000002/1444219711_washing_machine.png",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444219711_washing_machine.png",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000002/thumb_1444219711_washing_machine.png"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444219711_washing_machine.png"
           }
         },
         "name": "Washing Machine",
@@ -38,9 +38,9 @@
   {
     "desc": "From Novels to Sciefy",
     "logo": {
-      "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000005/1444218705_blog.png",
+      "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444218705_blog.png",
       "thumb": {
-        "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000005/thumb_1444218705_blog.png"
+        "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444218705_blog.png"
       }
     },
     "name": "Books",
@@ -48,9 +48,9 @@
     "sub_categories": [
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000006/letteratura.png",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/letteratura.png",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000006/thumb_letteratura.png"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/letteratura.png"
           }
         },
         "name": "literature",
@@ -59,9 +59,9 @@
       },
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000007/421517868_506aaa3bec.jpg",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/421517868_506aaa3bec.jpg",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000007/thumb_421517868_506aaa3bec.jpg"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/421517868_506aaa3bec.jpg"
           }
         },
         "name": "Sciefy",
@@ -70,9 +70,9 @@
       },
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000008/cat.gif",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/cat.gif",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000008/thumb_cat.gif"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/cat.gif"
           }
         },
         "name": "Programming",
@@ -85,9 +85,9 @@
   {
     "desc": "From table to diwan",
     "logo": {
-      "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c00000a/1444219487_sofa-chair.png",
+      "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444219487_sofa-chair.png",
       "thumb": {
-        "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c00000a/thumb_1444219487_sofa-chair.png"
+        "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444219487_sofa-chair.png"
       }
     },
     "name": "Furniture",
@@ -95,9 +95,9 @@
     "sub_categories": [
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000c/1444219487_sofa-chair.png",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444219487_sofa-chair.png",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000c/thumb_1444219487_sofa-chair.png"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444219487_sofa-chair.png"
           }
         },
         "name": "Sitting",
@@ -106,9 +106,9 @@
       },
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000d/diwan.jpg",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/diwan.jpg",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000d/thumb_diwan.jpg"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/diwan.jpg"
           }
         },
         "name": "diwan",
@@ -117,9 +117,9 @@
       },
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000e/wardrobe.png",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/wardrobe.png",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c00000e/thumb_wardrobe.png"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/wardrobe.png"
           }
         },
         "name": "cupboard",
@@ -132,9 +132,9 @@
   {
     "desc": "All type of cars",
     "logo": {
-      "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c00000f/1444405765_pen_stroke_sketch_doodle_lineart_146.png",
+      "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444405765_pen_stroke_sketch_doodle_lineart_146.png",
       "thumb": {
-        "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c00000f/thumb_1444405765_pen_stroke_sketch_doodle_lineart_146.png"
+        "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444405765_pen_stroke_sketch_doodle_lineart_146.png"
       }
     },
     "name": "Vehicles",
@@ -142,9 +142,9 @@
     "sub_categories": [
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000011/1444472772_car.png",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444472772_car.png",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000011/thumb_1444472772_car.png"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444472772_car.png"
           }
         },
         "name": "Compact Cars",
@@ -153,9 +153,9 @@
       },
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000013/1444472707_pen_stroke_sketch_doodle_lineart_88.png",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444472707_pen_stroke_sketch_doodle_lineart_88.png",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000013/thumb_1444472707_pen_stroke_sketch_doodle_lineart_88.png"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444472707_pen_stroke_sketch_doodle_lineart_88.png"
           }
         },
         "name": "Bicycle",
@@ -168,9 +168,9 @@
   {
     "desc": "All Medical Items",
     "logo": {
-      "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000014/1444405665_7.png",
+      "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444405665_7.png",
       "thumb": {
-        "url": "/uploads/grid/category/logo/5610b4fdecb9e2131c000014/thumb_1444405665_7.png"
+        "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444405665_7.png"
       }
     },
     "name": "Medical Instruments",
@@ -178,9 +178,9 @@
     "sub_categories": [
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000015/1444430434_wheelchair.png",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444430434_wheelchair.png",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000015/thumb_1444430434_wheelchair.png"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444430434_wheelchair.png"
           }
         },
         "name": "Wheel chairs",
@@ -189,9 +189,9 @@
       },
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000016/1444430230_8.png",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444430230_8.png",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000016/thumb_1444430230_8.png"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444430230_8.png"
           }
         },
         "name": "beds",
@@ -200,9 +200,9 @@
       },
       {
         "logo": {
-          "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000017/1444430380_Microscope.png",
+          "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444430380_Microscope.png",
           "thumb": {
-            "url": "/uploads/grid/sub_category/logo/5610b4fdecb9e2131c000017/thumb_1444430380_Microscope.png"
+            "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/1444430380_Microscope.png"
           }
         },
         "name": "Microscopes",
