@@ -19,7 +19,7 @@ html.no-js(lang='en', ng-app='rntJuncApp')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='application.css')
     // <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-    //script(src="//localhost:35729/livereload.js")
+    script(src="//localhost:35729/livereload.js")
   
   body
     //if lt IE 7
@@ -55,14 +55,18 @@ html.no-js(lang='en', ng-app='rntJuncApp')
 
     //Routes
     script(src='app/components/home/homeRoutes.js')
+    script(src='app/components/products/productsRoutes.js')
     
     //Services
     script(src='app/components/home/homeService.js')
+    script(src='app/components/products/productsService.js')
 
     //Controllers
     script(src='app/components/home/homeController.js')
+    script(src='app/components/products/productsController.js')
 
     //Directives
     script(src='app/shared/category/categoryDirective.js')
     script(src='app/shared/sub-category/subCategoryDirective.js')
+    script(src='app/shared/product/productDirective.js')
 

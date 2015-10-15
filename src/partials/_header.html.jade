@@ -3,7 +3,7 @@ header.large-8.large-offset-2.small-10.small-offset-1.top-bar(style= 'background
     // Title
     ul.left.title-area
       li.name
-        a(href='#') 
+        a(href='#/home') 
           span(style= 'color: red') Rent
           img(src='app/assets/img/logo.png', width='40')
           span(style= 'color: blue') Junction
@@ -23,7 +23,7 @@ nav.large-8.large-offset-2.small-10.small-offset-1.top-bar(data-topbar='', role=
           .large-10.small-9.columns
             input(type='text', placeholder='So, What are you waiting for?')
           .large-2.small-3.columns
-            a.alert.button.expand(href='#') Search
+            a.alert.button.expand(href='#', ng-model= 'q') Search
     // Top Bar Right Nav Elements
     ul.right
       // Divider

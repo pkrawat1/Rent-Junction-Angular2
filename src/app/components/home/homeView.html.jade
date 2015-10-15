@@ -15,8 +15,8 @@
     .large-3.small-4.columns.fx-fade-right.fx-speed-500(ng-show='selectedCategory')
       .icon-bar.vertical
         a.item(
-          ng-click="showSubCategories($index)",
-          ng-repeat= 'category in categories',
+          ng-click="showSubCategories($index)"
+          ng-repeat= 'category in categories'
           ng-class= '{active: category === selectedCategory}'
           )
           show-category(category= 'category', selectedcategory= 'selectedCategory')
@@ -29,5 +29,5 @@
           ng-show= 'true'
           ng-repeat= 'sub_category in selectedCategory.sub_categories'
           )
-          a
+          a(href='#/products/{{sub_category._id}}')
             show-sub-category(subcategory= 'sub_category')

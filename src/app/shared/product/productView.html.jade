@@ -1,0 +1,8 @@
+ul.pricing-table
+  //img(ng-src= '{{product.logo.thumb.url}}')
+  img(ng-src= 'http://localhost:3000/{{product.logo.url}}')
+  li.title {{product.name}}
+  li.bullet-item Rs {{product.rent}}
+  li.description {{product.desc}}
+  li.cta-button
+    a.button.success(href='#') Buy Now
