@@ -1,11 +1,10 @@
 img(
-  ng-src= 'http://localhost:3000/{{category.logo.thumb.url}}',
+  ng-src= '{{category.logo.thumb.url}}',
   ng-show= '!selectedcategory'
   )
-
 //
   img(
-    ng-src= '{{category.logo.thumb.url}}',
+    ng-src= 'http://localhost:3000/{{category.logo.thumb.url}}',
     ng-show= '!selectedcategory'
     )
 
