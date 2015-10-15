@@ -1,13 +1,26 @@
 [
   {
     "logo": {
-      "url": "/public/uploads/product/logo/561e9048ecb9e2b75f000000/Acer.png",
+      "url": "https://res.cloudinary.com/mally/image/upload/w_200,h_160/v1444716459/rntjunc/Acer.png",
       "thumb": {
-        "url": "/public/uploads/product/logo/561e9048ecb9e2b75f000000/thumb_Acer.png"
+        "url": "https://res.cloudinary.com/mally/image/upload/w_100,h_100/v1444716459/rntjunc/Acer.png"
       }
     },
     "mft_date": "2014-07-02",
     "name": "Acer laptop",
-    "rent": "2000/month"
+    "rent": "2000/month",
+    "desc": "Core i3, 4GB RAM, 500GB HD"
+  },
+  {
+    "desc": "5 Ltr with Dryer",
+    "logo": {
+      "url": "https://res.cloudinary.com/mally/image/upload/w_200,h_160/v1444716459/rntjunc/videocon.jpg",
+      "thumb": {
+        "url": "https://res.cloudinary.com/mally/image/upload/w_200,h_160/v1444716459/rntjunc/videocon.jpg"
+      }
+    },
+    "mft_date": "2015-05-02",
+    "name": "Videocon",
+    "rent": "500/month"
   }
 ]
