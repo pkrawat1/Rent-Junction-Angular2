@@ -7,5 +7,6 @@ class HomeRoutes extends Config
     .state 'home',{
       url: '/home'
       abstact: true
-      templateUrl: 'app/components/home/homeView.html'
+      views: 
+        main: templateUrl: 'app/components/home/homeView.html'
     }
