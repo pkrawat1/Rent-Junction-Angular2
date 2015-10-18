@@ -7,6 +7,5 @@ ul.pricing-table
   li.description {{product.desc}}
   li.cta-button
     a.button.success(
-      ui-sref='products.detail({productId: index})'
-      ng-click = 'showProductDetails()'
+      ui-sref='productDetail({productId: index})'
       ) Buy Now

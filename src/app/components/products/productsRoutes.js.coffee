@@ -10,8 +10,8 @@ class ProductsRoutes extends Config
           main: 
             templateUrl: PRODUCTS.templatePath('productsView.html')
       )
-      .state('products.detail',
-        url: '/detail/:productId'
+      .state('productDetail',
+        url: '/product/:productId'
         views:
           main:
             templateUrl: PRODUCTS.templatePath('productDetailView.html')

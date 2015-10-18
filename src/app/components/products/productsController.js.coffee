@@ -11,7 +11,7 @@ class Products extends Controller
     productsService($state.params.subCategoryId).success (data) ->
       $scope.products = data
       $scope.progressbar.complete()
-      showProductDetails() if $scope.productId != undefined
+      showProductDetails() unless $scope.productId is undefined
     
     showProductDetails = ->
       $scope.selectedProduct = $scope.products[$scope.productId]
