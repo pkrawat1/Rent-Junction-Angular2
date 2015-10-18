@@ -1,9 +1,13 @@
 'use strict'
 
 class Home extends Controller
-  constructor: ($scope, homeService) ->
-  
+  constructor: ($scope, ngProgressFactory, homeService) ->
+    
+    $scope.progressbar = ngProgressFactory.createInstance()
+    $scope.progressbar.start()
+
     homeService.success (data) ->
+      $scope.progressbar.complete()
       $scope.categories = data
     
     $scope.showSubCategories = (index)->
