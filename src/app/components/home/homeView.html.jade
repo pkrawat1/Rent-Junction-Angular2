@@ -1,33 +1,33 @@
-.row(ng-controller= 'homeController')
+.row(ng-controller= 'homeController as _home')
   
   br
   h5 To Buy or Find anything select an option below:
   hr
 
   ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5(
-    ng-show="!selectedCategory"
+    ng-show="!_home.selectedCategory"
     )
-    li.text-center.fx-fade-down.fx-speed-500(ng-repeat= 'category in categories')
-      a(ng-click="showSubCategories($index)")
-        show-category(category= 'category', selectedcategory= 'selectedCategory')
+    li.text-center.fx-fade-down.fx-easing-sine.fx-speed-500(ng-repeat= 'category in _home.categories')
+      a(ng-click="_home.showSubCategories($index)")
+        show-category(category= 'category', selectedcategory= '_home.selectedCategory')
 
   .row
-    .large-3.small-4.columns.fx-fade-right.fx-speed-500(ng-show='selectedCategory')
+    .large-3.small-4.columns.fx-fade-right.fx-speed-500(ng-show='_home.selectedCategory')
       .icon-bar.vertical
         a.item(
-          ng-click="showSubCategories($index)"
-          ng-repeat= 'category in categories'
-          ng-class= '{active: category === selectedCategory}'
+          ng-click="_home.showSubCategories($index)"
+          ng-repeat= 'category in _home.categories'
+          ng-class= '{active: category === _home.selectedCategory}'
           )
-          show-category(category= 'category', selectedcategory= 'selectedCategory')
+          show-category(category= 'category', selectedcategory= '_home.selectedCategory')
 
     .large-9.small-8.columns.fx-fade-left.fx-easing-sine.fx-speed-500(
-      ng-show='selectedCategory'
+      ng-show='_home.selectedCategory'
       )
       ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5
         li.text-center.fx-fade-left.fx-easing-sine.fx-speed-500(
           ng-show= 'true'
-          ng-repeat= 'sub_category in selectedCategory.sub_categories'
+          ng-repeat= 'sub_category in _home.selectedCategory.sub_categories'
           )
           a(href='#/products/{{sub_category._id}}')
             show-sub-category(subcategory= 'sub_category')

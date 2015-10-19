@@ -2,16 +2,17 @@
 
 class Products extends Controller
   constructor: ($scope, $state, ngProgressFactory, productsService) ->
-    
-    $scope.progressbar = ngProgressFactory.createInstance()
-    $scope.productId = $state.params.productId
+    _products = this
+    _products.productId = $state.params.productId
+
+    progressbar = ngProgressFactory.createInstance()
     
     # Get all Products for Sub-category
-    $scope.progressbar.start()
+    progressbar.start()
     productsService($state.params.subCategoryId).success (data) ->
-      $scope.products = data
-      $scope.progressbar.complete()
-      showProductDetails() unless $scope.productId is undefined
+      _products.products = data
+      progressbar.complete()
+      showProductDetails() unless _products.productId is undefined
     
     showProductDetails = ->
-      $scope.selectedProduct = $scope.products[$scope.productId]
+      _products.selectedProduct = _products.products[_products.productId]

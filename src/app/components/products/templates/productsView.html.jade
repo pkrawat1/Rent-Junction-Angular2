@@ -1,4 +1,4 @@
-.row(ng-controller= 'productsController')
+.row(ng-controller= 'productsController as _products')
   br
   h5 To Buy anything select any product
   hr
@@ -8,6 +8,6 @@
       ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
         li.text-center.fx-fade-left.fx-easing-sine.fx-speed-500(
           ng-show= 'true'
-          ng-repeat= 'product in products'
+          ng-repeat= 'product in _products.products'
           )
           show-product(product= 'product', index='$index')

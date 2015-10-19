@@ -2,13 +2,14 @@
 
 class Home extends Controller
   constructor: ($scope, ngProgressFactory, homeService) ->
+    _home = this
     
-    $scope.progressbar = ngProgressFactory.createInstance()
-    $scope.progressbar.start()
+    progressbar = ngProgressFactory.createInstance()
+    progressbar.start()
 
     homeService.success (data) ->
-      $scope.progressbar.complete()
-      $scope.categories = data
+      progressbar.complete()
+      _home.categories = data
     
-    $scope.showSubCategories = (index)->
-      $scope.selectedCategory = $scope.categories[index]
+    _home.showSubCategories = (index)->
+      _home.selectedCategory = _home.categories[index]
