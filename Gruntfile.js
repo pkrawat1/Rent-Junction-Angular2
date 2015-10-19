@@ -75,7 +75,7 @@ module.exports = function(grunt) {
           mangle: false
         },
         files: {
-          'build/application.js': [ 'build/**/*.js' ]
+          'build/application.js': [ 'build/app/**/*.js' ]
         }
       }
     },
