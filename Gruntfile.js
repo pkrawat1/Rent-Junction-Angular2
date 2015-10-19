@@ -3,6 +3,8 @@ module.exports = function(grunt) {
   // configure the tasks
   grunt.initConfig({
 
+    pkg: grunt.file.readJSON('package.json'),
+
     copy: {
       build: {
         cwd: 'src',
@@ -20,10 +22,16 @@ module.exports = function(grunt) {
         src: [ 'build' ]
       },
       stylesheets: {
-        src: [ 'build/**/*.css', 'build/**/*.scss', '!build/application.css' , 'build/**/*.map']
+        src: [
+          'build/**/*.css', 'build/**/*.scss', '!build/application.min.css' ,
+          'build/**/*.map'
+          ]
       },
       scripts: {
-        src: [ 'build/**/*.js.coffee', '!build/application.js' ]
+        src: [
+          'build/**/*.js.coffee', 'build/bower_components',
+          'build/application.js'
+          ]
       },
     },
 
@@ -38,7 +46,7 @@ module.exports = function(grunt) {
     cssmin: {
       build: {
         files: {
-          'build/application.css': [ 'build/**/*.css' ]
+          'build/application.min.css': [ 'build/**/*.css' ]
         }
       }
     },
@@ -69,17 +77,35 @@ module.exports = function(grunt) {
       }
     },
 
+    concat: {
+      options: {
+        separator: ';'
+      },
+      dist: {
+        src: [
+          'build/bower_components/angular/angular.js',
+          'build/bower_components/angular-ui-router/release/angular-ui-router.js',
+          'build/bower_components/firebase/firebase.js',
+          'build/bower_components/angularfire/dist/angularfire.js',
+          'build/bower_components/ngprogress/build/ngprogress.js',
+          'build/bower_components/gsap/src/uncompressed/TweenMax.js',
+          'build/bower_components/ngFx/dist/ngFx.js',
+          'build/bower_components/angular-animate/angular-animate.js',
+          'build/app/appModule.js',
+          'build/app/**/*.js'
+        ],
+        dest: 'build/application.js'
+      }
+    },
+
     uglify: {
-      build: {
-        options: {
-          mangle: false
-        },
-        files: [{
-          expand: true,
-          cwd: 'build/app',
-          src: '**/*.js',
-          dest: 'build/app'
-        }]
+      options: {
+        banner: '/*! application.min.js <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      },
+      dist: {
+        files: {
+          'build/application.min.js': ['<%= concat.dist.dest %>']
+        }
       }
     },
 
@@ -137,6 +163,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-coffee');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -148,7 +175,7 @@ module.exports = function(grunt) {
   grunt.registerTask(
     'scripts', 
     'Compiles the JavaScript files.', 
-    [ 'ngClassify', 'coffee', 'clean:scripts', 'uglify']
+    [ 'ngClassify', 'coffee', 'concat', 'uglify', 'clean:scripts']
   );
 
   grunt.registerTask(

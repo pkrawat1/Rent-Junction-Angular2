@@ -17,9 +17,8 @@ html.no-js(lang='en', ng-app='rntJuncApp')
     title Rent Junction
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='application.css')
-    // <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-    script(src="//localhost:35729/livereload.js")
+    link(rel='stylesheet', href='application.min.css')
+    //script(src="//localhost:35729/livereload.js")
   
   body
     //if lt IE 7
@@ -37,42 +36,4 @@ html.no-js(lang='en', ng-app='rntJuncApp')
     // FOOTER
     include partials/_footer.html.jade
     
-    //
-      In production use:
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-    script(src='bower_components/angular/angular.js')
-    script(src='bower_components/angular-ui-router/release/angular-ui-router.min.js')
-    script(src='bower_components/firebase/firebase.js')
-    script(src='bower_components/angularfire/dist/angularfire.min.js')
-    script(src='bower_components/ngprogress/build/ngprogress.min.js')
-
-    // ngFx required Animation Libraries
-    script(src='bower_components/gsap/src/minified/TweenMax.min.js')
-    script(src='bower_components/ngFx/dist/ngFx.min.js')
-    script(src='bower_components/angular-animate/angular-animate.js')
-    
-    // Modules
-    script(src='app/appModule.js')
-
-    //Routes
-    script(src='app/components/home/homeRoutes.js')
-    script(src='app/components/products/productsRoutes.js')
-    
-    //Services
-    script(src='app/components/home/homeService.js')
-    script(src='app/components/products/productsService.js')
-
-    //Controllers
-    script(src='app/components/home/homeController.js')
-    script(src='app/components/products/productsController.js')
-
-    //Directives
-    script(src='app/shared/category/categoryDirective.js')
-    script(src='app/shared/sub-category/subCategoryDirective.js')
-    script(src='app/shared/product/productDirective.js')
-
-    //Constants
-    script(src='app/appConstants.js')
-    script(src='app/components/products/productsConstant.js')
-
-
+    script(src='application.min.js')
