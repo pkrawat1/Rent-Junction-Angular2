@@ -74,9 +74,12 @@ module.exports = function(grunt) {
         options: {
           mangle: false
         },
-        files: {
-          'build/application.js': [ 'build/app/**/*.js' ]
-        }
+        files: [{
+          expand: true,
+          cwd: 'build/app',
+          src: '**/*.js',
+          dest: 'build/app'
+        }]
       }
     },
 
@@ -145,7 +148,7 @@ module.exports = function(grunt) {
   grunt.registerTask(
     'scripts', 
     'Compiles the JavaScript files.', 
-    [ 'ngClassify', 'coffee', 'clean:scripts']//, 'uglify']
+    [ 'ngClassify', 'coffee', 'clean:scripts', 'uglify']
   );
 
   grunt.registerTask(
