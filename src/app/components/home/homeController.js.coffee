@@ -6,8 +6,8 @@ class Home extends Controller
     
     progressbar = ngProgressFactory.createInstance()
     progressbar.start()
-
-    homeService.success (data) ->
+    
+    homeService.getCategories().then (data) ->
       progressbar.complete()
       _home.categories = data
     

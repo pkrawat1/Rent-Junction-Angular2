@@ -134,7 +134,7 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: 'src/**/*.coffee',
-        tasks: [ 'scripts' ]
+        tasks: [ 'build' ]
       },
       jade: {
         files: 'src/**/*.jade',

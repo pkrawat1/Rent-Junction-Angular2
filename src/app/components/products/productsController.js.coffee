@@ -9,7 +9,7 @@ class Products extends Controller
     
     # Get all Products for Sub-category
     progressbar.start()
-    productsService($state.params.subCategoryId).success (data) ->
+    productsService.getProducts($state.params.subCategoryId).then (data) ->
       _products.products = data
       progressbar.complete()
       showProductDetails() unless _products.productId is undefined
