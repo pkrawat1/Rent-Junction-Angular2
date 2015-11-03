@@ -1,10 +1,10 @@
 # Request for Categories and subcategories
 
 class Home extends Service
-  constructor: ($http) ->
+  constructor: ($http, CONSTANT) ->
     this.getCategories = ->
-      return  $http.get("app/config/categories.json")
-              #return $http.get("http://localhost:3000/categories")
+      #return  $http.get("app/config/categories.json")
+      return  $http.get("#{CONSTANT.API_URL}categories")
               .then(
                 (response) ->
                   return response.data

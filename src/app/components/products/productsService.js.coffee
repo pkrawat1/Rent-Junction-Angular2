@@ -1,8 +1,8 @@
 class Products extends Service
-  constructor: ($http) ->
+  constructor: ($http, CONSTANT) ->
     this.getProducts = (subCategoryId)->
-      return  $http.get("app/config/products.json")
-              #$http.get("http://localhost:3000/products/#{subCategoryId}")
+      #return  $http.get("app/config/products.json")
+      return  $http.get("#{CONSTANT.API_URL}products/#{subCategoryId}")
               .then(
                 (response) ->
                   return response.data

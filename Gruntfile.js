@@ -176,7 +176,7 @@ module.exports = function(grunt) {
       },
       jade: {
         files: 'src/**/*.jade',
-        tasks: [ 'jade' ]
+        tasks: [ 'jade' , 'hashres']
       },
       copy: {
         files: [ 'src/**', '!src/**/*.styl', '!src/**/*.coffee', '!src/**/*.jade' ],

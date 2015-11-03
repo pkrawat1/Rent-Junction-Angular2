@@ -7,7 +7,7 @@
     class= 'fx-fade-left fx-easing-sine fx-speed-500'
     ng-show='_products.selectedProduct'
     )
-    img(ng-src= '{{_products.selectedProduct.logo.url}}')
+    img(ng-src= '{{$parent.api_url + _products.selectedProduct.logo.url}}')
     //img(ng-src= 'http://localhost:3000/{{_products.selectedProduct.logo.url}}')
 
   .large-8.columns.text-left(
