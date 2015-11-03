@@ -20,8 +20,10 @@
     "grunt-contrib-stylus": "0.8.x",
     "grunt-contrib-uglify": "0.2.x",
     "grunt-contrib-watch": "0.5.x",
+    "grunt-ng-classify": "^3.0.0",
     "http-server": "^0.6.1",
     "jasmine-core": "^2.3.4",
+    "jshint-stylish": "^2.0.1",
     "karma": "~0.12",
     "karma-chrome-launcher": "^0.1.12",
     "karma-coffee-preprocessor": "^0.3.0",
@@ -29,8 +31,7 @@
     "karma-jasmine": "^0.3.5",
     "karma-junit-reporter": "^0.2.2",
     "protractor": "^2.1.0",
-    "shelljs": "^0.2.6",
-    "grunt-ng-classify": "^3.0.0"
+    "shelljs": "^0.2.6"
   },
   "scripts": {
     "postinstall": "bower install",
@@ -46,6 +47,8 @@
     "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
   },
   "dependencies": {
-    "grunt-contrib-concat": "^0.5.1"
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-hashres": "^0.4.1",
+    "jshint-stylish": "^2.0.1"
   }
 }

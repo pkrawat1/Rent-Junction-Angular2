@@ -98,6 +98,15 @@ module.exports = function(grunt) {
       }
     },
 
+    jshint: {
+      options: {
+        reporter: 'node_modules/jshint-stylish',
+        '-W064': true,
+        '-W093': true
+      },
+      beforeconcat: ['build/app/**/*.js'],
+    },
+
     uglify: {
       options: {
         banner: '/*! application.min.js <%= grunt.template.today("dd-mm-yyyy") %> */\n'
@@ -106,6 +115,35 @@ module.exports = function(grunt) {
         files: {
           'build/application.min.js': ['<%= concat.dist.dest %>']
         }
+      }
+    },
+
+    hashres: {
+      // Global options
+      options: {
+        // Optional. Encoding used to read/write files. Default value 'utf8'
+        encoding: 'utf8',
+        // Optional. Format used to name the files specified in 'files' property.
+        // Default value: '${hash}.${name}.cache.${ext}'
+        fileNameFormat: '${hash}.${name}.cache.${ext}',
+        // Optional. Should files be renamed or only alter the references to the files
+        // Use it with '${name}.${ext}?${hash} to get perfect caching without renaming your files
+        // Default value: true
+        renameFiles: true
+      },
+      // hashres is a multitask. Here 'prod' is the name of the subtask. You can have as many as you want.
+      prod: {
+        // Specific options, override the global ones
+        options: {
+          // You can override encoding, fileNameFormat or renameFiles
+        },
+        // Files to hash
+        src: [
+          // WARNING: These files will be renamed!
+          'build/application.min.js',
+          'build/application.min.css'],
+        // File that refers to above files and needs to be updated with the hashed name
+        dest: 'build/index.html',
       }
     },
 
@@ -164,18 +202,23 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-ng-classify');
+  grunt.loadNpmTasks('grunt-hashres');
 
   // define the tasks
   grunt.registerTask(
     'scripts', 
     'Compiles the JavaScript files.', 
-    [ 'ngClassify', 'coffee', 'concat', 'uglify', 'clean:scripts']
+    [ 
+      'ngClassify', 'coffee', 'jshint:beforeconcat', 'concat', 'uglify',
+      'clean:scripts'
+    ]
   );
 
   grunt.registerTask(
@@ -187,7 +230,7 @@ module.exports = function(grunt) {
   grunt.registerTask(
       'build', 
       'Compiles all of the assets and copies the files to the build directory.', 
-      [ 'clean:build', 'copy', 'stylesheets', 'scripts', 'jade']
+      [ 'clean:build', 'copy', 'stylesheets', 'scripts', 'jade', 'hashres']
     );
 
   grunt.registerTask(
