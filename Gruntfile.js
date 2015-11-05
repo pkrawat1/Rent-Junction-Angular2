@@ -240,7 +240,7 @@ module.exports = function(grunt) {
     'scripts', 
     'Compiles the JavaScript files.', 
     [ 
-      'ngClassify', 'coffee', 'jshint:beforeconcat', 'concat'
+      'ngClassify', 'coffee', 'jshint:beforeconcat', 'concat', 'uglify'
     ]
   );
 
