@@ -6,4 +6,5 @@ class App extends App then constructor: -> return [
   'ngAnimate'
   'firebase'
   'ngProgress'
+  'templates-main'
 ]

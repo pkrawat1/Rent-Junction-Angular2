@@ -49,6 +49,7 @@
   "dependencies": {
     "grunt-contrib-concat": "^0.5.1",
     "grunt-hashres": "^0.4.1",
+    "grunt-html2js": "^0.3.5",
     "jshint-stylish": "^2.0.1"
   }
 }

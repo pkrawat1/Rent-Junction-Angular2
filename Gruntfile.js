@@ -28,11 +28,13 @@ module.exports = function(grunt) {
           ]
       },
       scripts: {
-        src: [
-          'build/**/*.js.coffee', 'build/bower_components',
-          'build/application.js'
-          ]
+        src: [ 'build/**/*.js', '!build/*.cache.js']
       },
+      app: {
+        src: [
+          'build/app', 'build/bower_components', 'build/**/*.map'
+          ]
+      }
     },
 
     sass: {
@@ -94,7 +96,7 @@ module.exports = function(grunt) {
           'build/app/appModule.js',
           'build/app/**/*.js'
         ],
-        dest: 'build/application.js'
+        dest: 'build/application.min.js'
       }
     },
 
@@ -140,8 +142,10 @@ module.exports = function(grunt) {
         // Files to hash
         src: [
           // WARNING: These files will be renamed!
+          'build/application.min.css',
           'build/application.min.js',
-          'build/application.min.css'],
+          'build/templates.min.js'
+          ],
         // File that refers to above files and needs to be updated with the hashed name
         dest: 'build/index.html',
       }
@@ -162,6 +166,29 @@ module.exports = function(grunt) {
       }
     },
 
+    html2js: {
+      options: {
+        watch: true,
+        base: 'build',
+        singleModule: true,
+        useStrict: true,
+        htmlmin: {
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true,
+          removeComments: true,
+          removeEmptyAttributes: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true
+        }
+      },
+      main: {
+        src: ['build/**/*.html'],
+        dest: 'build/templates.min.js'
+      },
+    },
+
     watch: {
       options: {
         livereload: true,
@@ -176,11 +203,7 @@ module.exports = function(grunt) {
       },
       jade: {
         files: 'src/**/*.jade',
-        tasks: [ 'jade' , 'hashres']
-      },
-      copy: {
-        files: [ 'src/**', '!src/**/*.styl', '!src/**/*.coffee', '!src/**/*.jade' ],
-        tasks: [ 'copy' ]
+        tasks: [ 'build']
       }
     },
 
@@ -205,6 +228,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-html2js');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -216,21 +240,23 @@ module.exports = function(grunt) {
     'scripts', 
     'Compiles the JavaScript files.', 
     [ 
-      'ngClassify', 'coffee', 'jshint:beforeconcat', 'concat', 'uglify',
-      'clean:scripts'
+      'ngClassify', 'coffee', 'jshint:beforeconcat', 'concat'
     ]
   );
 
   grunt.registerTask(
     'stylesheets', 
     'Compiles the stylesheets.', 
-    [ 'sass' , 'cssmin', 'clean:stylesheets' ]
+    [ 'sass' , 'cssmin', 'clean:stylesheets']
   );
 
   grunt.registerTask(
       'build', 
       'Compiles all of the assets and copies the files to the build directory.', 
-      [ 'clean:build', 'copy', 'stylesheets', 'scripts', 'jade', 'hashres']
+      [
+        'clean:build', 'copy', 'stylesheets', 'scripts', 'jade', 'html2js',
+        'hashres', 'clean:scripts', 'clean:app'
+      ]
     );
 
   grunt.registerTask(
