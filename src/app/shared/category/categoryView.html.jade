@@ -1,12 +1,7 @@
 img(
-  ng-src= '{{$parent.api_url + category.logo.thumb.url}}',
+  ng-src= '{{category.logo.url | thumbnail:"h_100"}}',
   ng-show= '!selectedcategory'
   )
-//
-  img(
-    ng-src= 'http://localhost:3000/{{category.logo.thumb.url}}',
-    ng-show= '!selectedcategory'
-    )
 
 h5(ng-if= '!selectedcategory') {{category.name}}
 

@@ -1,6 +1,5 @@
 ul.pricing-table
-  img(ng-src= '{{$parent.api_url + product.logo.url}}')
-  //img(ng-src= 'http://localhost:3000/{{product.logo.url}}')
+  img(ng-src= '{{product.logo.url | thumbnail:"h_150"}}')
   li.title {{product.name}}
   li.bullet-item Rs {{product.rent}}
   li.description Mft. {{product.mft_date | date}}

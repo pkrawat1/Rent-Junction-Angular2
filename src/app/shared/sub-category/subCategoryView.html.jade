@@ -1,3 +1,2 @@
-img(ng-src= '{{$parent.api_url + subcategory.logo.thumb.url}}')
-//img(ng-src= 'http://localhost:3000/{{subcategory.logo.thumb.url}}')
+img(ng-src= '{{subcategory.logo.url | thumbnail:"h_100"}}')
 h5 {{subcategory.name}}
