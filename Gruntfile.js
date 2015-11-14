@@ -105,7 +105,7 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiEndpoint: 'http://rntjunc.herokuapp.com'
+            apiEndpoint: 'https://rntjunc.herokuapp.com'
           }
         }
       }
