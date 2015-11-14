@@ -79,12 +79,45 @@ module.exports = function(grunt) {
       }
     },
 
+    ngconstant: {
+      // Options for all targets
+      options: {
+        space: '  ',
+        wrap: '"use strict";\n\n {%= __ngModule %}',
+        name: 'environment',
+      },
+      // Environment targets
+      development: {
+        options: {
+          dest: 'build/app/environment.js'
+        },
+        constants: {
+          ENV: {
+            name: 'development',
+            apiEndpoint: 'http://localhost:3000'
+          }
+        }
+      },
+      production: {
+        options: {
+          dest: 'build/app/environment.js'
+        },
+        constants: {
+          ENV: {
+            name: 'production',
+            apiEndpoint: 'http://rntjunc.herokuapp.com'
+          }
+        }
+      }
+    },
+
     concat: {
       options: {
         separator: ';'
       },
       dist: {
         src: [
+          'build/bower_components/jquery/dist/jquery.js',
           'build/bower_components/angular/angular.js',
           'build/bower_components/angular-ui-router/release/angular-ui-router.js',
           'build/bower_components/firebase/firebase.js',
@@ -93,6 +126,7 @@ module.exports = function(grunt) {
           'build/bower_components/gsap/src/uncompressed/TweenMax.js',
           'build/bower_components/ngFx/dist/ngFx.js',
           'build/bower_components/angular-animate/angular-animate.js',
+          'build/bower_components/foundation/js/foundation.js',
           'build/app/appModule.js',
           'build/app/**/*.js'
         ],
@@ -184,7 +218,7 @@ module.exports = function(grunt) {
         }
       },
       main: {
-        src: ['build/**/*.html'],
+        src: ['build/**/*.html', '!build/bower_components/**/*.html'],
         dest: 'build/templates.min.js'
       },
     },
@@ -199,11 +233,11 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: 'src/**/*.coffee',
-        tasks: [ 'build' ]
+        tasks: [ 'build:development' ]
       },
       jade: {
         files: 'src/**/*.jade',
-        tasks: [ 'build']
+        tasks: [ 'build:development']
       }
     },
 
@@ -233,15 +267,21 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-ng-classify');
+  grunt.loadNpmTasks('grunt-ng-constant');
   grunt.loadNpmTasks('grunt-hashres');
 
   // define the tasks
   grunt.registerTask(
-    'scripts', 
-    'Compiles the JavaScript files.', 
-    [ 
-      'ngClassify', 'coffee', 'jshint:beforeconcat', 'concat', 'uglify'
-    ]
+    'scripts',
+    function (env){
+      grunt.task.run(
+        [ 
+          'ngClassify', 'coffee', 'jshint:beforeconcat', 'ngconstant:' + env,
+          'concat'
+        ]
+      )
+      env === 'production' && grunt.task.run(['uglify'])
+    } 
   );
 
   grunt.registerTask(
@@ -251,17 +291,23 @@ module.exports = function(grunt) {
   );
 
   grunt.registerTask(
-      'build', 
-      'Compiles all of the assets and copies the files to the build directory.', 
-      [
-        'clean:build', 'copy', 'stylesheets', 'scripts', 'jade', 'html2js',
-        'hashres', 'clean:scripts', 'clean:app'
-      ]
+      'build',
+      function (env){
+        grunt.task.run(
+          [
+            'clean:build', 'copy', 'stylesheets', 'scripts:' + env, 'jade',
+            'html2js', 'hashres', 'clean:scripts', 'clean:app'
+          ]
+        )
+      }
     );
 
-  grunt.registerTask(
-    'serve', 
-    'Watches the project for changes, automatically builds them and runs a server.', 
-    [ 'build', 'connect', 'watch' ]
-  );
+  grunt.registerTask('serve', function (env) {
+    grunt.task.run(
+      [
+        'build:' + env, 'connect', 'watch'
+      ]
+    );
+  });
 };
+

@@ -3,9 +3,8 @@
 class Constant extends Constant
   constructor: ->
     return {
-      API_URL: 'https://rntjunc.herokuapp.com/'
     }
 
 class App extends Run
-  constructor: ($rootScope, CONSTANT)->
-    $rootScope.api_url = CONSTANT.API_URL
+  constructor: ($rootScope, CONSTANT, ENV)->
+    $rootScope.api_url = ENV.apiEndpoint

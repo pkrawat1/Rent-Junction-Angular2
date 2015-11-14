@@ -7,4 +7,5 @@ class App extends App then constructor: -> return [
   'firebase'
   'ngProgress'
   'templates-main'
+  'environment'
 ]

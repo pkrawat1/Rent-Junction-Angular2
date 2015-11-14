@@ -1,10 +1,12 @@
+'use strict'
+
 # Request for Categories and subcategories
 
 class Home extends Service
-  constructor: ($http, CONSTANT) ->
+  constructor: ($http, ENV) ->
     this.getCategories = ->
       #return  $http.get("app/config/categories.json")
-      return  $http.get("#{CONSTANT.API_URL}categories")
+      return  $http.get("#{ENV.apiEndpoint}/categories")
               .then(
                 (response) ->
                   return response.data
