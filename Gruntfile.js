@@ -233,11 +233,11 @@ module.exports = function(grunt) {
       },
       scripts: {
         files: 'src/**/*.coffee',
-        tasks: [ 'build:development' ]
+        tasks: [ 'build' ]
       },
       jade: {
         files: 'src/**/*.jade',
-        tasks: [ 'build:development']
+        tasks: [ 'build']
       }
     },
 
@@ -293,6 +293,7 @@ module.exports = function(grunt) {
   grunt.registerTask(
       'build',
       function (env){
+        env = env || 'development'
         grunt.task.run(
           [
             'clean:build', 'copy', 'stylesheets', 'scripts:' + env, 'jade',
@@ -303,6 +304,7 @@ module.exports = function(grunt) {
     );
 
   grunt.registerTask('serve', function (env) {
+    env = env || 'development'
     grunt.task.run(
       [
         'build:' + env, 'connect', 'watch'
