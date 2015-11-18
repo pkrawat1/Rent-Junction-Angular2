@@ -8,4 +8,5 @@ class App extends App then constructor: -> return [
   'ngProgress'
   'templates-main'
   'environment'
+  'satellizer'
 ]

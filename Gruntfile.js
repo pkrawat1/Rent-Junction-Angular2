@@ -94,7 +94,8 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'development',
-            apiEndpoint: 'http://localhost:3000'
+            apiEndpoint: 'http://localhost:3000/api/v1',
+            fbClientId: '168712170148866'
           }
         }
       },
@@ -105,7 +106,8 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiEndpoint: 'https://rntjunc.herokuapp.com'
+            apiEndpoint: 'https://rntjunc.herokuapp.com/api/v1',
+            fbClientId: '168095963543820'
           }
         }
       }
@@ -119,6 +121,8 @@ module.exports = function(grunt) {
         src: [
           'build/bower_components/jquery/dist/jquery.js',
           'build/bower_components/angular/angular.js',
+          'build/bower_components/angular-cookie/angular-cookie.js',
+          'build/bower_components/ng-token-auth/dist/ng-token-auth.js',
           'build/bower_components/angular-ui-router/release/angular-ui-router.js',
           'build/bower_components/firebase/firebase.js',
           'build/bower_components/angularfire/dist/angularfire.js',
@@ -127,6 +131,8 @@ module.exports = function(grunt) {
           'build/bower_components/ngFx/dist/ngFx.js',
           'build/bower_components/angular-animate/angular-animate.js',
           'build/bower_components/foundation/js/foundation.js',
+          'build/bower_components/satellizer/satellizer.js',
+          'build/bower_components/toastr/toastr.js',
           'build/app/appModule.js',
           'build/app/**/*.js'
         ],
