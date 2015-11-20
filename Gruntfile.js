@@ -40,16 +40,18 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'build/app.css' : ['build/**/*.scss']
+          'build/app.css' : ['build/app/app.css.scss']
         }
       }
     },
 
     cssmin: {
       build: {
-        files: {
-          'build/application.min.css': [ 'build/**/*.css' ]
-        }
+        src: [
+           'build/app.css',
+          'build/bower_components/ngprogress/ngProgress.css'
+          ],
+        dest: 'build/application.min.css'
       }
     },
 
@@ -235,7 +237,7 @@ module.exports = function(grunt) {
       },
       stylesheets: {
         files: ['src/**/*.css', 'src/**/*.scss'],
-        tasks: [ 'stylesheets' ]
+        tasks: [ 'build' ]
       },
       scripts: {
         files: 'src/**/*.coffee',

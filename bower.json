@@ -21,6 +21,7 @@
     "jquery": "~2.1.4",
     "ng-token-auth": "~0.0.28",
     "satellizer": "~0.13.0",
-    "toastr": "~2.1.2"
+    "toastr": "~2.1.2",
+    "foundation-icon-fonts": "*"
   }
 }
