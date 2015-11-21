@@ -20,6 +20,7 @@ class Auth extends Controller
         .then(
           ()->
             toastr.success('You have successfully signed in with ' + provider + '!')
+            _auth.toggleSignInModal()
         )
         .catch(
           (error)->

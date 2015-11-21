@@ -1,11 +1,11 @@
 modal(title='Login Form', visible='_auth.signInModalStatus')
   
-  .large-6.divider
+  .large-5.divider
     form(role='form', method='post', ng-submit="_auth.login()")
       .form-group.row.collapse
         .small-2.large-1.columns
           span.prefix
-            b @
+            b.fi-at-sign.large
         .small-10.large-11.columns
           input.form-control.large(
             type='email', placeholder='Enter Email', ng-model="_auth.user.email"
@@ -13,11 +13,27 @@ modal(title='Login Form', visible='_auth.signInModalStatus')
       .form-group.row.collapse
         .small-2.large-1.columns
           span.prefix
-            b *
+            b.fi-asterisk.large
         .small-10.large-11.columns
           input.form-control(
             type='password', placeholder='Password', ng-model="_auth.user.password"
             )
       button.button.small(type='submit') Submit
 
-  .large-6
+    label
+      | New to Rent Junction 
+      a(ng-click='_auth.toggleSignUpModal()') Sign Up
+
+    br
+    h6 Social Logins
+    button.large-5.button.fi-social-facebook(
+      ng-click= '_auth.authenticate("facebook")'
+    )
+      |  Facebook
+    button.large-5.large-offset-1.button.alert.fi-social-google-plus(
+      ng-click= '_auth.authenticate("google")'
+    )
+      |  Google
+
+  .large-7
+
