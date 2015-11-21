@@ -50,6 +50,19 @@ class Auth extends Controller
       return if not $auth.isAuthenticated()
       $auth.logout()
         .then(
-          -> 
+          ()-> 
             toastr.info('You have been logged out')
+        )
+
+    _auth.signup = ->
+      $auth.signup(_auth.user)
+        .then(
+          (response)->
+            $auth.setToken(response)
+            toastr.info('You have successfully created a new account and have been signed-in')
+            _auth.toggleSignUpModal()
+        )
+        .catch(
+          ()->
+            toastr.error(response.data.message)
         )

@@ -1,2 +1,51 @@
 modal(title='SignUp Form', visible='_auth.signUpModalStatus')
-  | Testing
+  form(role='form', method='post', ng-submit="_auth.signup()")
+    .large-6.columns
+      .form-group.row.collapse
+        .small-2.large-1.columns
+          span.prefix
+            b.fi-torso.large
+        .small-10.large-11.columns
+          input.form-control.large(
+            type='text'
+            placeholder='Enter Full Name'
+            ng-model="_auth.user.full_name"
+            require
+            )
+      .form-group.row.collapse
+        .small-2.large-1.columns
+          span.prefix
+            b.fi-asterisk.large
+        .small-10.large-11.columns
+          input.form-control(
+            type='password'
+            placeholder='Password'
+            ng-model="_auth.user.password"
+            require
+            )
+
+      button.button.small(type='submit') Submit
+
+    .large-6.columns
+      .form-group.row.collapse
+        .small-2.large-1.columns
+          span.prefix
+            b.fi-at-sign.large
+        .small-10.large-11.columns
+          input.form-control.large(
+            type='email'
+            placeholder='Enter Email'
+            ng-model="_auth.user.email"
+            require
+            )
+      .form-group.row.collapse
+        .small-2.large-1.columns
+          span.prefix
+            b.fi-asterisk.large
+        .small-10.large-11.columns
+          input.form-control(
+            type='password'
+            placeholder='Password'
+            ng-model="_auth.user.password_confirmation"
+            require
+            )

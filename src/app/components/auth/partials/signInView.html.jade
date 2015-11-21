@@ -1,4 +1,4 @@
-modal(title='Login Form', visible='_auth.signInModalStatus')
+modal(title='Login', visible='_auth.signInModalStatus')
   
   .large-5.divider
     form(role='form', method='post', ng-submit="_auth.login()")
@@ -18,7 +18,7 @@ modal(title='Login Form', visible='_auth.signInModalStatus')
           input.form-control(
             type='password', placeholder='Password', ng-model="_auth.user.password"
             )
-      button.button.small(type='submit') Submit
+      button.button.small(type='submit') Login
 
     label
       | New to Rent Junction 
