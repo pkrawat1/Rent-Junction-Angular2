@@ -10,7 +10,6 @@
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
     "angular-ui-router": "~0.2.15",
-    "foundation": "~5.5.3",
     "html5-boilerplate": "~5.2.0",
     "ngFx": "~1.1.0",
     "gsap": "greensock#~1.18.0",
@@ -22,6 +21,7 @@
     "ng-token-auth": "~0.0.28",
     "satellizer": "~0.13.0",
     "toastr": "~2.1.2",
-    "foundation-icon-fonts": "*"
+    "foundation-icon-fonts": "*",
+    "foundation": "~5.5.3"
   }
 }

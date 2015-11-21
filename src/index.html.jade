@@ -20,7 +20,7 @@ html.no-js(lang='en', ng-app='rntJuncApp')
     link(rel='stylesheet', href='application.min.css')
     script(src="//localhost:35729/livereload.js")
   
-  body
+  body(ng-controller='authController as _auth')
     //if lt IE 7
       p.browsehappy
         | You are using an strong outdated browser. Please visit
@@ -30,11 +30,11 @@ html.no-js(lang='en', ng-app='rntJuncApp')
     
     // include partials folder
     // HEADER
-    include partials/_header.html.jade
+    include partials/headerView.html.jade
     // MAIN BODY
-    include partials/_main.html.jade
+    include partials/mainView.html.jade
     // FOOTER
-    include partials/_footer.html.jade
+    include partials/footerView.html.jade
     
     script(src='application.min.js')
     script(src='templates.min.js')

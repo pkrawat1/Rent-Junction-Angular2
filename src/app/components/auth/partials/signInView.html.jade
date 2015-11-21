@@ -1,0 +1,23 @@
+modal(title='Login Form', visible='_auth.signInModalStatus')
+  
+  .large-6.divider
+    form(role='form', method='post', ng-submit="_auth.login()")
+      .form-group.row.collapse
+        .small-2.large-1.columns
+          span.prefix
+            b @
+        .small-10.large-11.columns
+          input.form-control.large(
+            type='email', placeholder='Enter Email', ng-model="_auth.user.email"
+            )
+      .form-group.row.collapse
+        .small-2.large-1.columns
+          span.prefix
+            b *
+        .small-10.large-11.columns
+          input.form-control(
+            type='password', placeholder='Password', ng-model="_auth.user.password"
+            )
+      button.button.small(type='submit') Submit
+
+  .large-6

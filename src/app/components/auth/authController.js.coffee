@@ -3,6 +3,14 @@
 class Auth extends Controller
   constructor: ($scope, $auth)->
     _auth = this
+    _auth.signInModalStatus = false
+    _auth.signUpModalStatus = false
+
+    _auth.toggleSignInModal = ->
+      _auth.signInModalStatus = !_auth.signInModalStatus
+
+    _auth.toggleSignUpModal = ->
+      _auth.signUpModalStatus = !_auth.signUpModalStatus
 
     _auth.isAuthenticated = ->
       return $auth.isAuthenticated()
@@ -26,10 +34,11 @@ class Auth extends Controller
         )
 
     _auth.login = ->
-      $auth.login($scope.user)
+      $auth.login(_auth.user)
         .then(
           ()->
             toastr.success('You have successfully signed in!')
+            _auth.toggleSignInModal()
         )
         .catch(
           (error)->

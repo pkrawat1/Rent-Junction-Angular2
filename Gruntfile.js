@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     cssmin: {
       build: {
         src: [
-           'build/app.css',
+          'build/app.css',
           'build/bower_components/ngprogress/ngProgress.css'
           ],
         dest: 'build/application.min.css'
@@ -122,6 +122,8 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'build/bower_components/jquery/dist/jquery.js',
+          'build/bower_components/foundation/js/foundation.js',
+          'build/bower_components/what-input/what-input.js',
           'build/bower_components/angular/angular.js',
           'build/bower_components/angular-cookie/angular-cookie.js',
           'build/bower_components/ng-token-auth/dist/ng-token-auth.js',
@@ -132,7 +134,6 @@ module.exports = function(grunt) {
           'build/bower_components/gsap/src/uncompressed/TweenMax.js',
           'build/bower_components/ngFx/dist/ngFx.js',
           'build/bower_components/angular-animate/angular-animate.js',
-          'build/bower_components/foundation/js/foundation.js',
           'build/bower_components/satellizer/satellizer.js',
           'build/bower_components/toastr/toastr.js',
           'build/app/appModule.js',
