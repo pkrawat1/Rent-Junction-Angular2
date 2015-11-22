@@ -1,0 +1,16 @@
+.top-bar{
+  box-shadow: 2px 2px 5px #aaa;
+  .input-group{
+    margin-bottom: 0;
+  }
+  .menu-text{
+    color: #eee;
+  }
+  a{
+    color: white;
+  }
+  input{
+    background-color: rgba(#000, 0.1);
+    border: #aaa;
+  }
+}

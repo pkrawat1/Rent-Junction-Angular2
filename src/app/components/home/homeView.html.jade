@@ -4,28 +4,29 @@
   h5 To Buy or Find anything select an option below:
   hr
 
-  ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5(
+  .small-up-3.medium-up-4.large-up-5(
     ng-show="!_home.selectedCategory"
     )
-    li.text-center.fx-fade-down.fx-easing-sine.fx-speed-500(ng-repeat= 'category in _home.categories')
+    .column.text-center.fx-fade-down.fx-easing-sine.fx-speed-500(ng-repeat= 'category in _home.categories')
       a(ng-click="_home.showSubCategories($index)")
         show-category(category= 'category', selectedcategory= '_home.selectedCategory')
 
   .row
     .large-3.small-4.columns.fx-fade-right.fx-speed-500(ng-show='_home.selectedCategory')
-      .icon-bar.vertical
-        a.item(
-          ng-click="_home.showSubCategories($index)"
-          ng-repeat= 'category in _home.categories'
-          ng-class= '{active: category === _home.selectedCategory}'
-          )
-          show-category(category= 'category', selectedcategory= '_home.selectedCategory')
+      ul.menu.vertical
+        li
+          a.item(
+            ng-click="_home.showSubCategories($index)"
+            ng-repeat= 'category in _home.categories'
+            ng-class= '{active: category === _home.selectedCategory}'
+            )
+            show-category(category= 'category', selectedcategory= '_home.selectedCategory')
 
     .large-9.small-8.columns.fx-fade-left.fx-easing-sine.fx-speed-500(
       ng-show='_home.selectedCategory'
       )
-      ul.small-block-grid-3.medium-block-grid-4.large-block-grid-5
-        li.text-center.fx-fade-left.fx-easing-sine.fx-speed-500(
+      .small-up-3.medium-up-4.large-up-5
+        .column.text-center.fx-fade-left.fx-easing-sine.fx-speed-500(
           ng-show= 'true'
           ng-repeat= 'sub_category in _home.selectedCategory.sub_categories'
           )

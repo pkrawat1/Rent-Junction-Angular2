@@ -39,6 +39,9 @@ module.exports = function(grunt) {
 
     sass: {
       dist: {
+        options: {
+          loadPath: ['build/bower_components/foundation-sites/scss']
+        },
         files: {
           'build/app.css' : ['build/app/app.css.scss']
         }
@@ -48,6 +51,7 @@ module.exports = function(grunt) {
     cssmin: {
       build: {
         src: [
+          //'build/bower_components/foundation-sites/dist/foundation.css',
           'build/app.css',
           'build/bower_components/ngprogress/ngProgress.css'
           ],
@@ -122,8 +126,8 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'build/bower_components/jquery/dist/jquery.js',
-          'build/bower_components/foundation/js/foundation.js',
           'build/bower_components/what-input/what-input.js',
+          'build/bower_components/foundation-sites/dist/foundation.js',
           'build/bower_components/angular/angular.js',
           'build/bower_components/angular-cookie/angular-cookie.js',
           'build/bower_components/ng-token-auth/dist/ng-token-auth.js',
