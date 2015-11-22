@@ -32,7 +32,7 @@ module.exports = function(grunt) {
       },
       app: {
         src: [
-          'build/app', 'build/bower_components', 'build/**/*.map'
+          'build/app', 'build/bower_components', 'build/**/*.map', 'build/partials'
           ]
       }
     },
