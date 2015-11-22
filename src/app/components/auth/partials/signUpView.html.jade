@@ -1,5 +1,8 @@
 modal(title='SignUp', visible='_auth.signUpModalStatus')
-  form(role='form', method='post', ng-submit="_auth.signup()")
+  form(
+    role='form', method='post', ng-submit="_auth.signup()", data-abide,
+    novalidate
+    )
     .large-6.columns
       .form-group
         .input-group
@@ -9,7 +12,7 @@ modal(title='SignUp', visible='_auth.signUpModalStatus')
             type='text'
             placeholder='Enter Full Name'
             ng-model="_auth.user.full_name"
-            require
+            required
             )
       
       .form-group
@@ -20,7 +23,7 @@ modal(title='SignUp', visible='_auth.signUpModalStatus')
             type='password'
             placeholder='Password'
             ng-model="_auth.user.password"
-            require
+            required
             )
 
       button.button.small(type='submit') Submit
@@ -34,7 +37,7 @@ modal(title='SignUp', visible='_auth.signUpModalStatus')
             type='email'
             placeholder='Enter Email'
             ng-model="_auth.user.email"
-            require
+            required
             )
 
       .form-group
@@ -45,6 +48,6 @@ modal(title='SignUp', visible='_auth.signUpModalStatus')
             type='password'
             placeholder='Password'
             ng-model="_auth.user.password_confirmation"
-            require
+            required
             )
       
