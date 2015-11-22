@@ -1,23 +1,22 @@
-modal(title='SignUp Form', visible='_auth.signUpModalStatus')
+modal(title='SignUp', visible='_auth.signUpModalStatus')
   form(role='form', method='post', ng-submit="_auth.signup()")
     .large-6.columns
-      .form-group.row.collapse
-        .small-2.large-1.columns
-          span.prefix
+      .form-group
+        .input-group
+          span.input-group-label
             b.fi-torso.large
-        .small-10.large-11.columns
-          input.form-control.large(
+          input.form-control.input-group-field(
             type='text'
             placeholder='Enter Full Name'
             ng-model="_auth.user.full_name"
             require
             )
-      .form-group.row.collapse
-        .small-2.large-1.columns
-          span.prefix
+      
+      .form-group
+        .input-group
+          span.input-group-label
             b.fi-asterisk.large
-        .small-10.large-11.columns
-          input.form-control(
+          input.form-control.input-group-field(
             type='password'
             placeholder='Password'
             ng-model="_auth.user.password"
@@ -25,27 +24,27 @@ modal(title='SignUp Form', visible='_auth.signUpModalStatus')
             )
 
       button.button.small(type='submit') Submit
-
+            
     .large-6.columns
-      .form-group.row.collapse
-        .small-2.large-1.columns
-          span.prefix
+      .form-group
+        .input-group
+          span.input-group-label
             b.fi-at-sign.large
-        .small-10.large-11.columns
-          input.form-control.large(
+          input.form-control.input-group-field(
             type='email'
             placeholder='Enter Email'
             ng-model="_auth.user.email"
             require
             )
-      .form-group.row.collapse
-        .small-2.large-1.columns
-          span.prefix
+
+      .form-group
+        .input-group
+          span.input-group-label
             b.fi-asterisk.large
-        .small-10.large-11.columns
-          input.form-control(
+          input.form-control.input-group-field(
             type='password'
             placeholder='Password'
             ng-model="_auth.user.password_confirmation"
             require
             )
+      

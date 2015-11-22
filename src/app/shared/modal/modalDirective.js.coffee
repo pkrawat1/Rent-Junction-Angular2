@@ -1,7 +1,7 @@
 'use strict'
 
 class Modal extends Directive
-  constructor: ->
+  constructor: ()->
     return {
       templateUrl: 'app/shared/modal/modalView.html'
       restrict: 'E'
@@ -9,19 +9,20 @@ class Modal extends Directive
       replace:true
       scope:true
       link: (scope, element, attrs) ->
+        $(document).foundation()
         scope.title = attrs.title
 
         scope.$watch attrs.visible, (value) ->
           if value == true
-            element.foundation('reveal','open')
+            element.foundation('open')
           else
-            element.foundation('reveal','close')
+            element.foundation('close')
 
-        $(element).on 'opened.fndtn.reveal', ->
+        element.on 'open.zf.Reveal', ->
           scope.$apply ->
             scope.$parent[attrs.visible] = true
         
-        $(element).on 'closed.fndtn.reveal', ->
+        element.on 'closed.zf.Reveal', ->
           scope.$apply ->
             scope.$parent[attrs.visible] = false
         

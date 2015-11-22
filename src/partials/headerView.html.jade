@@ -1,46 +1,43 @@
-header.large-8.large-offset-2.small-10.small-offset-1.top-bar(style= 'background: white')
-  section
-    // Title
-    ul.left.title-area
-      li.name
-        a(href='#/home') 
-          span(style= 'color: red') Rent
-          img(src='images/logo.png', width='40')
-          span(style= 'color: blue') Junction
-    ul.right
-      li
-        small
-          a(href='#') 24/7 Customer Support
-
-nav.large-8.large-offset-2.small-10.small-offset-1.top-bar(data-topbar='', role='navigation')
-  // Top Bar Section
-  section.top-bar-section
-    // Top Bar Left Nav Elements
-    ul
-      // Search | has-form wrapper
-      li.has-form.large-8
-        .row.collapse
-          .large-10.small-9.columns
-            input(type='text', placeholder='So, What are you waiting for?')
-          .large-2.small-3.columns
-            a.alert.button.expand(href='#', ng-model= 'q') Search
-    // Top Bar Right Nav Elements
-    ul.rights
-      // Divider
-      //li.divider
-      // Dropdown
-      li.has-dropdown.not-click
-        a(href='#') Select City
-      // Anchor
-      // Button
-      li.has-form.show-for-large-up(
-        ng-if="!_auth.isAuthenticated()"
-        ng-click='_auth.toggleSignUpModal()'
-        )
-        a.button.success(href='#') Sign Up
-      li.divider
-      li(ng-if="!_auth.isAuthenticated()", ng-click= "_auth.toggleSignInModal()")
-        a(href='#') Log In
-      li(ng-if="_auth.isAuthenticated()")
-        a(href='#', ng-click= '_auth.logout()') Log Out
-
+.row.top-bar
+  header.row
+    section
+      small.large-6.large-push-6.columns.text-right
+        a(href='#') 24/7 Customer Support
+        a(href='#')  | Select City 
+        a(
+          ng-if="!_auth.isAuthenticated()"
+          ng-click='_auth.toggleSignUpModal()'
+          )  | Sign Up 
+        a(
+          ng-if="!_auth.isAuthenticated()"
+          ng-click= "_auth.toggleSignInModal()"
+          )  | Log In 
+        a(
+          href='#'
+          ng-if="_auth.isAuthenticated()"
+          ng-click= '_auth.logout()'
+          )  | Log Out 
+  br
+  nav.row(data-topbar='', role='navigation')
+    // Top Bar Section
+    section
+      // Top Bar Left Nav Elements
+      ul.menu
+        li.large-2.small-2.columns.text-left
+          a.menu-text(href='#/home') Rent Junction
+        // Search | has-form wrapper
+        li.large-8.small-8.columns.text-center
+          .input-group
+            span.input-group-label.button.hollow.fi-magnifying-glass.text-white.large
+            input.input-group-field.hollow(
+              type='text'
+              placeholder='So, What are you waiting for?'
+            )
+            a.input-group-label.button.hollow.top-bar-search(href='#', ng-model= 'q')
+              strong.text-white Search
+        li.large-2.small-2.columns
+          a.button.warning.hollow
+            strong
+              i.fi-shopping-cart
+              |  Cart  
+              .badge.warning.large 0

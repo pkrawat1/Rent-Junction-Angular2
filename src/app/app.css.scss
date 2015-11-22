@@ -1,6 +1,10 @@
 $fi-path: "fonts";
 
-@import '../bower_components/foundation/scss/foundation';
+// Vendor Styling
+@import 'scss/custom_foundation_settings';
+@import '../bower_components/foundation-sites/foundation-sites';
 @import '../bower_components/foundation-icon-fonts/_foundation-icons';
 @import '../bower_components/toastr/toastr';
 
+//Custom Styling Here
+@import 'scss/top-bar';
