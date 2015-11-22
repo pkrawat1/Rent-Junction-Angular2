@@ -13,7 +13,7 @@
 
   .row
     .large-3.small-4.columns.fx-fade-right.fx-speed-500(ng-show='_home.selectedCategory')
-      ul.menu.vertical
+      ul.menu.vertical(data-magellan)
         li
           a.item(
             ng-click="_home.showSubCategories($index)"

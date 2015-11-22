@@ -13,4 +13,14 @@
     background-color: rgba(#000, 0.1);
     border: #aaa;
   }
+  .top-bar-search{
+    background-color: $topbar-background + 5;
+    border: 2px bold $topbar-background - 20;
+  }
+  .text-white{
+    color: white;
+  }
+  header{
+    margin-bottom: -1%;
+  }
 }

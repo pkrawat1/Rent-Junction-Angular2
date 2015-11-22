@@ -1,10 +1,12 @@
-ul.pricing-table
-  img(ng-src= '{{product.logo.url | thumbnail:"h_150"}}')
-  li.title {{product.name}}
-  li.bullet-item Rs {{product.rent}}
-  li.description Mft. {{product.mft_date | date}}
-  li.description {{product.desc}}
-  li.cta-button
-    a.button.success(
-      ui-sref='productDetail({subCategoryId: product.sub_category_id, productId: index})'
-      ) Buy Now
+.thumbnail
+  img(ng-src= '{{product.logo.url}}')
+h5 
+  {{product.name}}
+i.alert.fi-price-tag.large
+small
+  |  Rs {{product.rent}}, 
+  | Mft. {{product.mft_date | date}}
+p {{product.desc}}
+a.button.hollow.expanded(
+    ui-sref='productDetail({subCategoryId: product.sub_category_id, productId: index})'
+    ) Buy Now
