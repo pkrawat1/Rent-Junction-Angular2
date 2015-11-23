@@ -1,5 +1,6 @@
 modal(title='Login', visible='_auth.signInModalStatus')
-  .large-6.columns
+  .large-7.columns.border-right.dark
+    br
     form(
       role='form'
       method='post'
@@ -29,13 +30,10 @@ modal(title='Login', visible='_auth.signInModalStatus')
             ng-model="_auth.user.password"
             required
             )
-      button.button.drop-shadow(type='submit') Login
+      button.button.drop-shadow.large-5(type='submit') Login
 
-    label
-      | New to Rent Junction 
-      a(ng-click='_auth.toggleSignUpModal()') Sign Up
-
-  .large-6.columns
+  .large-5.columns
+    br
     button.button.expanded.fi-social-facebook.drop-shadow(
       ng-click= '_auth.authenticate("facebook")'
     )
@@ -45,4 +43,7 @@ modal(title='Login', visible='_auth.signInModalStatus')
     )
       |  Google
 
-
+  .large-12.columns
+    label
+      | New to Rent Junction 
+      a(ng-click='_auth.toggleSignUpModal()') Sign Up

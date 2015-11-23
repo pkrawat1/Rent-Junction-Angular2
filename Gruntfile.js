@@ -125,6 +125,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
+          'build/bower_components/modernizr/modernizr.js',
           'build/bower_components/jquery/dist/jquery.js',
           'build/bower_components/what-input/what-input.js',
           'build/bower_components/foundation-sites/dist/foundation.js',
