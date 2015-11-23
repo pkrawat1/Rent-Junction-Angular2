@@ -24,5 +24,8 @@
     "foundation-icon-fonts": "*",
     "foundation": "~5.5.3",
     "foundation-sites": "~6.0.3"
+  },
+  "devDependencies": {
+    "motion-ui": "~1.1.0"
   }
 }

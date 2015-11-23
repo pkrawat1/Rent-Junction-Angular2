@@ -29,18 +29,18 @@ modal(title='Login', visible='_auth.signInModalStatus')
             ng-model="_auth.user.password"
             required
             )
-      button.button(type='submit') Login
+      button.button.drop-shadow(type='submit') Login
 
     label
       | New to Rent Junction 
       a(ng-click='_auth.toggleSignUpModal()') Sign Up
 
   .large-6.columns
-    button.button.expanded.fi-social-facebook(
+    button.button.expanded.fi-social-facebook.drop-shadow(
       ng-click= '_auth.authenticate("facebook")'
     )
       |  Facebook
-    button.button.expanded.alert.fi-social-google-plus(
+    button.button.expanded.alert.fi-social-google-plus.drop-shadow(
       ng-click= '_auth.authenticate("google")'
     )
       |  Google

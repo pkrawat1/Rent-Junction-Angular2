@@ -18,12 +18,10 @@ class Modal extends Directive
           else
             element.foundation('close')
 
-        element.on 'open.zf.Reveal', ->
+        element.on 'closed.zf.reveal', ->
           scope.$apply ->
-            scope.$parent[attrs.visible] = true
-        
-        element.on 'closed.zf.Reveal', ->
-          scope.$apply ->
-            scope.$parent[attrs.visible] = false
+            # Gives [scope alias, variable]
+            arr = attrs.visible.split('.')
+            scope.$parent[arr[0]][arr[1]] = false
         
     }
