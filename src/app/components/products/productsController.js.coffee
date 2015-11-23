@@ -1,12 +1,12 @@
 'use strict'
 
 class Products extends Controller
-  constructor: ($scope, $state, ngProgressFactory, productsService) ->
+  constructor: ($scope, $state, $rootScope, productsService) ->
     _products = this
     _products.productId = $state.params.productId
     subCategoryId = $state.params.subCategoryId
 
-    progressbar = ngProgressFactory.createInstance()
+    progressbar = $rootScope.progressbar
     
     # Get all Products for Sub-category
     progressbar.start()

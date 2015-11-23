@@ -1,12 +1,12 @@
 'use strict'
 
 class Auth extends Controller
-  constructor: ($scope, $auth, ngProgressFactory)->
+  constructor: ($scope, $auth, $rootScope)->
     _auth = this
     _auth.signInModalStatus = false
     _auth.signUpModalStatus = false
-    progressbar = ngProgressFactory.createInstance()
-
+    progressbar = $rootScope.progressbar
+  
     _auth.toggleSignInModal = ->
       _auth.signInModalStatus = !_auth.signInModalStatus
 
