@@ -18,9 +18,7 @@ html.no-js(lang='en', ng-app='rntJuncApp')
     meta(name='description', content='')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='application.min.css')
-    script(src="//localhost:35729/livereload.js")
-    script(src='application.min.js')
-    script(src='templates.min.js')
+    //script(src="//localhost:35729/livereload.js")
   
   body(ng-controller='authController as _auth')
     //if lt IE 7
@@ -37,3 +35,6 @@ html.no-js(lang='en', ng-app='rntJuncApp')
     include partials/mainView.html.jade
     // FOOTER
     include partials/footerView.html.jade
+    
+    script(src='application.min.js')
+    script(src='templates.min.js')
