@@ -1,4 +1,8 @@
-modal(title='SignUp', visible='_auth.signUpModalStatus')
+modal(
+  title='SignUp'
+  visible='_auth.signUpModalStatus'
+  ng-show= '_auth.signUpModalStatus'
+  )
   form(
     role='form', method='post', ng-submit="_auth.signup()", data-abide,
     novalidate
