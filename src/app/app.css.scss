@@ -10,9 +10,9 @@ $fi-path: "fonts";
 @import 'scss/top-bar';
 @import 'scss/buttons';
 
-button.drop-shadow{
-  box-shadow: 0px 1px 5px #000;
-  &:hover{
+.drop-shadow{
+  box-shadow: 0px 2px 5px #aaa;
+  &.button:hover{
     box-shadow: none;
     transform: scale(0.98);
   }
@@ -34,4 +34,14 @@ button.drop-shadow{
 
 @each $size in (1, 2, 3) {
   .size-#{$size}{ font-size: #{$size}rem;}
+}
+
+.menu{
+  a.active{
+    background: $topbar-background + 50;
+  }
+}
+
+.pointer{
+  cursor: pointer;
 }

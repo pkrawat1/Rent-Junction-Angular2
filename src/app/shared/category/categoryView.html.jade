@@ -3,7 +3,8 @@ img(
   ng-show= '!selectedcategory'
   )
 
-h5(ng-if= '!selectedcategory') {{category.name}}
+label(ng-if= '!selectedcategory')
+  br  
+  h6 {{category.name}}
 
-strong
-  label(ng-if= 'selectedcategory') {{category.name}}
+p(ng-if= 'selectedcategory') {{category.name}}
