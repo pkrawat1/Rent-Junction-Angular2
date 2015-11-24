@@ -34,14 +34,16 @@ modal(title='Login', visible='_auth.signInModalStatus')
 
   .large-5.columns
     br
-    button.button.expanded.fi-social-facebook.drop-shadow(
+    button.button.hollow.expanded.drop-shadow(
       ng-click= '_auth.authenticate("facebook")'
     )
-      |  Facebook
-    button.button.expanded.alert.fi-social-google-plus.drop-shadow(
+      i.fi-social-facebook.size-2
+      strong.size-1  Facebook
+    button.button.hollow.expanded.alert.drop-shadow(
       ng-click= '_auth.authenticate("google")'
     )
-      |  Google
+      i.fi-social-google-plus.size-2
+      strong.size-1  Google
 
   .large-12.columns
     label
