@@ -6,3 +6,5 @@ bower_components/
 .idea
 build
 .sass-cache
+.*
+tscommand*

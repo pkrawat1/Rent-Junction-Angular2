@@ -10,9 +10,9 @@ html
     script(src='node_modules/angular2/bundles/angular2.dev.js')
     script.
       System.config({
-      transpiler: 'typescript',
-      typescriptOptions: { emitDecoratorMetadata: true },
-      packages: {'app': {defaultExtension: 'ts'}}
+        transpiler: 'typescript',
+        typescriptOptions: { emitDecoratorMetadata: true },
+        packages: {'app': {defaultExtension: 'ts'}}
       });
       System.import('boot.ts')
       .then(null, console.error.bind(console));
