@@ -1,40 +1,25 @@
-doctype html
-
-//if lt IE 7
-  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='en', ng-app='rntJuncApp')  
-//if IE 7
-  html.no-js.lt-ie9.lt-ie8(lang='en', ng-app='rntJuncApp')  
-//if IE 8
-  html.no-js.lt-ie9(lang='en', ng-app='rntJuncApp')  
-// [if gt IE 8] <!
-
-html.no-js(lang='en', ng-app='rntJuncApp')
-  // <![endif]
-  
+html
   head
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    title Rent Junction : Rent Everything
-    meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='application.min.css')
-    script(src="//localhost:35729/livereload.js")
-  
-  body(ng-controller='authController as _auth')
-    //if lt IE 7
-      p.browsehappy
-        | You are using an strong outdated browser. Please visit
-        a(href='http://browsehappy.com/') upgrade your browser
-        |  to improve your experience.
-    
-    
-    // include partials folder
-    // HEADER
-    include partials/headerView.html.jade
-    // MAIN BODY
-    include partials/mainView.html.jade
-    // FOOTER
-    include partials/footerView.html.jade
-    
-    script(src='application.min.js')
-    script(src='templates.min.js')
+    title Angular 2 QuickStart
+    // 1. Load libraries
+    script(src='node_modules/es6-shim/es6-shim.js')
+    script(src='node_modules/angular2/bundles/angular2-polyfills.js')
+    script(src='node_modules/systemjs/dist/system.src.js')
+    script(src='node_modules/rxjs/bundles/Rx.js')
+    script(src='node_modules/angular2/bundles/angular2.dev.js')
+    // 2. Configure SystemJS
+    script.
+      System.config({
+        packages: {
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('boot.js')
+            .then(null, console.error.bind(console));
+  // 3. Display the application
+  body
+    my-app Loading...
+
