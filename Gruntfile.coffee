@@ -100,4 +100,4 @@ module.exports = (grunt) ->
     'jade', 'clean:jade'
   ]
 
-  grunt.registerTask 'build', ['clean:build', 'copy', 'scripts', 'templates', 'connect', 'watch']
+  grunt.registerTask 'build', ['clean', 'copy', 'scripts', 'templates', 'connect', 'watch']

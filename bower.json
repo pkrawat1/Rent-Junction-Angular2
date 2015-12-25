@@ -1,14 +1,11 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "name": "ng_rnt_junc",
+  "version": "1.0.0",
+  "description": "Phase 1",
+  "repository": "https://github.com/pkrawat1/ng_rnt_junc.git",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "~1.4.0",
-    "angular-loader": "~1.4.0",
-    "angular-mocks": "~1.4.0",
     "angular-ui-router": "~0.2.15",
     "html5-boilerplate": "~5.2.0",
     "ngFx": "~1.1.0",
