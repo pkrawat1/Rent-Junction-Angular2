@@ -1,25 +1,21 @@
+doctype html
 html
   head
     title Angular 2 QuickStart
-    // 1. Load libraries
     script(src='node_modules/es6-shim/es6-shim.js')
     script(src='node_modules/angular2/bundles/angular2-polyfills.js')
     script(src='node_modules/systemjs/dist/system.src.js')
+    script(src='node_modules/typescript/lib/typescript.js')
     script(src='node_modules/rxjs/bundles/Rx.js')
     script(src='node_modules/angular2/bundles/angular2.dev.js')
-    // 2. Configure SystemJS
     script.
       System.config({
-        packages: {
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
-        }
+      transpiler: 'typescript',
+      typescriptOptions: { emitDecoratorMetadata: true },
+      packages: {'app': {defaultExtension: 'ts'}}
       });
-      System.import('boot.js')
-            .then(null, console.error.bind(console));
-  // 3. Display the application
+      System.import('boot.ts')
+      .then(null, console.error.bind(console));
   body
     my-app Loading...
 

@@ -15,13 +15,23 @@ module.exports = (grunt) ->
     
     clean:
       build:
-        src: [ 'build' ]
+        src: [ '!build/node_modules', 'build/**' ]
 
     copy:
       build:
-        src: [ 'src/**', 'node_modules/**' ]
-        dest: 'build'
-        expand: true
+        files: [{
+            cwd: 'src'
+            src: [ '**']
+            dest: 'build'
+            expand: true
+          },
+          {
+            cwd: 'node_modules'
+            src: [ '**']
+            dest: 'build/node_modules'
+            expand: true
+          }
+        ] 
 
     jade:
       compile:
@@ -54,4 +64,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.registerTask 'default', [ 'typescript', 'jade' ]
-  grunt.registerTask 'build', [ 'clean', 'copy', 'typescript', 'jade', 'connect', 'watch']
+  grunt.registerTask 'build', [ 'clean', 'copy', 'jade', 'connect', 'watch']
