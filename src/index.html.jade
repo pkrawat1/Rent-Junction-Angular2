@@ -1,17 +1,18 @@
 doctype html
 html
   head
-    title Angular 2 QuickStart
+    title Rent juntion
     script(src='node_modules/es6-shim/es6-shim.js')
     script(src='node_modules/angular2/bundles/angular2-polyfills.js')
     script(src='node_modules/systemjs/dist/system.src.js')
     script(src='node_modules/typescript/lib/typescript.js')
     script(src='node_modules/rxjs/bundles/Rx.js')
     script(src='node_modules/angular2/bundles/angular2.dev.js')
+    //- script(src='libs.min.js')
+    //- script(src='application.min.js')
+    script(src="//localhost:35729/livereload.js")
     script.
       System.config({
-        transpiler: 'typescript',
-        typescriptOptions: { emitDecoratorMetadata: true },
         packages: {'app': {defaultExtension: 'js'}}
       });
       System.import('boot.js')

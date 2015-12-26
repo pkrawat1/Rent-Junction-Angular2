@@ -17,6 +17,21 @@ module.exports = (grunt) ->
       test: "test"
       tmp: ".tmp"
 
+    scripts:
+      libs: [
+          'node_modules/es6-shim/es6-shim.js'
+          'node_modules/angular2/bundles/angular2-polyfills.js'
+          'node_modules/systemjs/dist/system.src.js'
+          'node_modules/typescript/lib/typescript.js'
+          'node_modules/rxjs/bundles/Rx.js'
+          'node_modules/angular2/bundles/angular2.dev.js'
+        ]
+      app: [
+        'build/boot.js'
+        'build/app/components/{,*/}{,*/}*.js'
+        'build/app/shared/{,*/}{,*/}*.js'
+      ]
+
   # Define the configuration for all the tasks
   configs = require("load-grunt-configs") grunt, appConfig
 
@@ -30,12 +45,15 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-hashres');
 
   #Scripts
-  grunt.registerTask 'scripts', ['ts', 'clean:ts']
+  grunt.registerTask 'scripts', [
+    'ts', 'clean:ts'#, 'concat'
+    ]
 
   grunt.registerTask 'templates', [
-    'jade', 'clean:jade'
+    'jade', 'clean:jade'#, 'hashres'
   ]
 
   grunt.registerTask 'build', ['clean:build', 'copy', 'scripts', 'templates', 'connect', 'watch']

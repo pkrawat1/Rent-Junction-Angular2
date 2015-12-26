@@ -10,22 +10,43 @@ module.exports = (grunt, appConfig) -> tasks:
         sourceMap: true
         experimentalDecorators: true
         emitDecoratorMetadata: true
-        removeComments: false
+        removeComments: true
         noImplicitAny: false
 
   concat:
-    options: separator: ';'
-    dist:
-      src: [
-        'node_modules/es6-shim/es6-shim.js'
-        'node_modules/angular2/bundles/angular2-polyfills.js'
-        'node_modules/systemjs/dist/system.src.js'
-        'node_modules/typescript/lib/typescript.js'
-        'node_modules/rxjs/bundles/Rx.js'
-        'node_modules/angular2/bundles/angular2.dev.js'
-      ]
-      dest: 'build/lib.min.js'
+    options:
+      separator: ';'
+      stripBanners: true
+    libs:
+      src: appConfig.scripts.libs
+      dest: 'build/libs.min.js'
+    app:
+      src: appConfig.scripts.app
+      dest: 'build/application.min.js'
 
   uglify:
-    options: banner: '/*! lib.min.js <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-    dist: files: 'build/lib.min.js': [ '<%= concat.dist.dest %>' ]
+    libs:
+      options:
+        banner: '/*! libs.min.js <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      files: 
+        'build/libs.min.js': [ '<%= concat.libs.dest %>' ]
+    app:
+      options:
+        banner: '/*! application.min.js <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      files: 
+        'build/application.min.js': [ '<%= concat.app.dest %>' ]
+
+  hashres:
+    options:
+      encoding: 'utf8'
+      fileNameFormat: '${hash}.${name}.cache.${ext}'
+      renameFiles: true
+    prod:
+      options: {}
+      src: [
+        'build/application.min.css'
+        'build/application.min.js'
+        'build/libs.min.js'
+        'build/templates.min.js'
+      ]
+      dest: 'build/index.html'

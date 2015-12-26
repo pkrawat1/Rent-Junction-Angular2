@@ -16,16 +16,8 @@ module.exports = (grunt, appConfig) -> tasks:
           expand: true
         },
         {
-          cwd: 'node_modules'
-          src: [
-            'es6-shim/es6-shim.js'
-            'angular2/bundles/angular2-polyfills.js'
-            'systemjs/dist/system.src.js'
-            'typescript/lib/typescript.js'
-            'rxjs/bundles/Rx.js'
-            'angular2/bundles/angular2.dev.js'
-          ]
-          dest: 'build/node_modules'
+          src: appConfig.scripts.libs
+          dest: 'build'
           expand: true
         }
       ]
@@ -38,6 +30,11 @@ module.exports = (grunt, appConfig) -> tasks:
         hostname: '*'
 
   watch:
+    options:
+      livereload: true
     jade:
       files: 'src/**/*.jade',
       tasks: [ 'jade' ]
+    ts:
+      files: 'src/**/*.jade'
+      tasks: ['ts']
