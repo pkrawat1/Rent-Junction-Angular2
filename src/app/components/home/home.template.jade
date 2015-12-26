@@ -1,1 +1,36 @@
-h3 {{title}}
+.row
+  
+  br
+  h5 To Buy or Find anything select an option below:
+  hr
+
+  .small-up-3.medium-up-4.large-up-5
+    .column.text-center.fx-fade-down.fx-easing-sine.fx-speed-500(*ngFor= '#category of categories')
+      a((click)="showSubCategories($index)")
+        img(
+          src= '{{category.logo.url | thumbnail:"h_100"}}'
+          )
+
+        p{{category.name}}
+
+  //- .row
+  //-   .large-2.small-3.columns.fx-fade-right.fx-speed-500(ng-show='_home.selectedCategory')
+  //-     ul.menu.vertical(data-magellan)
+  //-       li
+  //-         a.item.button(
+  //-           ng-click="_home.showSubCategories($index)"
+  //-           ng-repeat= 'category in _home.categories'
+  //-           ng-class= '{active: category === _home.selectedCategory}'
+  //-           )
+  //-           show-category(category= 'category', selectedcategory= '_home.selectedCategory')
+
+  //-   .large-10.small-9.columns.fx-fade-left.fx-easing-sine.fx-speed-500(
+  //-     ng-show='_home.selectedCategory'
+  //-     )
+  //-     .small-up-3.medium-up-4.large-up-5
+  //-       .column.text-center.fx-fade-left.fx-easing-sine.fx-speed-500(
+  //-         ng-show= 'true'
+  //-         ng-repeat= 'sub_category in _home.selectedCategory.sub_categories'
+  //-         )
+  //-         a(href='#/products/{{sub_category._id}}')
+  //-           show-sub-category(subcategory= 'sub_category')
