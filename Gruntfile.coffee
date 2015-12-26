@@ -1,88 +1,26 @@
 module.exports = (grunt) ->
-  grunt.initConfig
-    ts:
-      default :
-        src: ["build/**/*.ts"],
-        options:
-          target: "ES5"
-          module: "system"
-          moduleResolution: "node"
-          sourceMap: true
-          experimentalDecorators: true
-          removeComments: false
-          noImplicitAny: false
-    
-    clean:
-      build:
-        src: [ 'build' ]
-      ts:
-        src: ['build/**/*.ts']
-      jade:
-        src: ['build/**/*.jade']
 
-    copy:
-      build:
-        files: [{
-            cwd: 'src'
-            src: [ '**']
-            dest: 'build'
-            expand: true
-          },
-          {
-            cwd: 'node_modules'
-            src: [
-              'es6-shim/es6-shim.js'
-              'angular2/bundles/angular2-polyfills.js'
-              'systemjs/dist/system.src.js'
-              'typescript/lib/typescript.js'
-              'rxjs/bundles/Rx.js'
-              'angular2/bundles/angular2.dev.js'
-            ]
-            dest: 'build/node_modules'
-            expand: true
-          }
-        ] 
+  # Load grunt tasks automatically
+  require("load-grunt-tasks") grunt
 
-    jade:
-      compile:
-        options:
-          data: {}
-        files: [{
-          expand: true
-          cwd: 'src'
-          src: [ '**/*.jade' ]
-          dest: 'build'
-          ext: '.html'
-        }]
+  # Time how long tasks take. Can help when optimizing build times
+  require("time-grunt") grunt
 
-    connect: 
-      server: 
-        options:
-          port: 3000,
-          base: 'build',
-          hostname: '*'
+  # Configurable paths for the application
+  appConfig=
+    config:
+      src: "config/grunt/*"
 
-    watch:
-      jade:
-        files: 'src/**/*.jade',
-        tasks: [ 'jade' ]
+    app: 
+      path: require("./bower.json").appPath or "src"
+      dist: "dist"
+      test: "test"
+      tmp: ".tmp"
 
-    concat:
-      options: separator: ';'
-      dist:
-        src: [
-          'node_modules/es6-shim/es6-shim.js'
-          'node_modules/angular2/bundles/angular2-polyfills.js'
-          'node_modules/systemjs/dist/system.src.js'
-          'node_modules/typescript/lib/typescript.js'
-          'node_modules/rxjs/bundles/Rx.js'
-          'node_modules/angular2/bundles/angular2.dev.js'
-        ]
-        dest: 'build/lib.min.js'
+  # Define the configuration for all the tasks
+  configs = require("load-grunt-configs") grunt, appConfig
 
-    uglify:
-      options: banner: '/*! lib.min.js <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-      dist: files: 'build/lib.min.js': [ '<%= concat.dist.dest %>' ]
+  grunt.initConfig configs
 
   grunt.loadNpmTasks("grunt-ts")
   grunt.loadNpmTasks 'grunt-contrib-copy'
@@ -94,10 +32,10 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   #Scripts
-  grunt.registerTask 'scripts', []
+  grunt.registerTask 'scripts', ['ts', 'clean:ts']
 
   grunt.registerTask 'templates', [
     'jade', 'clean:jade'
   ]
 
-  grunt.registerTask 'build', ['clean', 'copy', 'scripts', 'templates', 'connect', 'watch']
+  grunt.registerTask 'build', ['clean:build', 'copy', 'scripts', 'templates', 'connect', 'watch']

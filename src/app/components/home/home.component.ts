@@ -6,7 +6,7 @@ import {Component, OnInit} from 'angular2/core';
   directives: [],
   providers: []
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   public title = 'home';
 
   // constructor(private _heroService: HeroService) { }

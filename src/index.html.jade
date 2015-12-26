@@ -12,9 +12,9 @@ html
       System.config({
         transpiler: 'typescript',
         typescriptOptions: { emitDecoratorMetadata: true },
-        packages: {'app': {defaultExtension: 'ts'}}
+        packages: {'app': {defaultExtension: 'js'}}
       });
-      System.import('boot.ts')
+      System.import('boot.js')
       .then(null, console.error.bind(console));
   body
     home Loading...
