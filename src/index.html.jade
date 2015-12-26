@@ -2,27 +2,8 @@ doctype html
 html
   head
     title Rent juntion
-
-    // Libraries
-    script(src='node_modules/es6-shim/es6-shim.js')
-    script(src='node_modules/angular2/bundles/angular2-polyfills.js')
-    script(src='node_modules/systemjs/dist/system.src.js')
-    script(src='node_modules/typescript/lib/typescript.js')
-    script(src='node_modules/rxjs/bundles/Rx.js')
-    script(src='node_modules/angular2/bundles/angular2.dev.js')
-
-    // Application 
-    //- script(src='libs.min.js')
-    //- script(src='application.min.js')
     link(rel='stylesheet', href='application.min.css')
-
     script(src="//localhost:35729/livereload.js")
-    script.
-      System.config({
-        packages: {'app': {defaultExtension: 'js'}}
-      });
-      System.import('app/app.js')
-      .then(null, console.error.bind(console));
   body
     // include partials folder
     // HEADER
@@ -31,4 +12,25 @@ html
     include partials/_main.html.jade
     // FOOTER
     include partials/_footer.html.jade
+
+    // Libraries
+    script(src='node_modules/es6-shim/es6-shim.js')
+    script(src='node_modules/angular2/bundles/angular2-polyfills.js')
+    script(src='node_modules/systemjs/dist/system.src.js')
+    script(src='node_modules/typescript/lib/typescript.js')
+    script(src='node_modules/rxjs/bundles/Rx.js')
+    script(src='node_modules/angular2/bundles/angular2.dev.js')
+    script(src='node_modules/angular2/bundles/router.dev.js')
+    script(src='node_modules/angular2/bundles/http.dev.js')
+
+    // Application 
+    //- script(src='libs.min.js')
+    //- script(src='application.min.js')
+
+    script.
+      System.config({
+        packages: {'app': {defaultExtension: 'js'}}
+      });
+      System.import('app/bootstrap.js')
+      .then(null, console.error.bind(console));
 

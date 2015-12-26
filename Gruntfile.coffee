@@ -24,7 +24,7 @@ module.exports = (grunt) ->
           'node_modules/systemjs/dist/system.src.js'
           'node_modules/typescript/lib/typescript.js'
           'node_modules/rxjs/bundles/Rx.js'
-          'node_modules/angular2/bundles/angular2.dev.js'
+          'node_modules/angular2/bundles/*.dev.js'
         ]
       app: [
         'build/boot.js'

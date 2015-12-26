@@ -1,25 +1,28 @@
-import {Component, OnInit} from 'angular2/core';
-import {CategoryService} from '../category/category.service';
+import { Component } from 'angular2/core';
+import { CORE_DIRECTIVES } from 'angular2/common';
+import { RouterLink } from 'angular2/router';
+//import { Observable } from 'rxjs/Observable';
+import { DataService } from '../../services/data.service';
 
 @Component({
-  selector: 'home',
+  selector: 'categories',
   templateUrl: './app/components/home/home.html',
-  directives: [],
-  bindings: [CategoryService],
-  providers: []
+  directives: [CORE_DIRECTIVES, RouterLink],
+  providers: [DataService]
 })
 
-export class HomeComponent implements OnInit{
-  public title = 'home';
+export class HomeComponent{
+  title: String;
+  categories: Array<any>;
 
-  constructor(private _categoryService: CategoryService) { }
-
-  getCategories() {
-    console.log(this._categoryService.getCategories());
-    //.subscribe(categories => this.categories = categories)
-  }
+  constructor(private _dataService: DataService) {}
 
   ngOnInit() {
-    this.getCategories();
+    this.title = 'Categories';
+
+    this._dataService.getCategories()
+        .subscribe((categories:any[]) => {
+          this.categories = this.categories = categories;
+        });
   }
 }
