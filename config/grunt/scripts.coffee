@@ -1,8 +1,8 @@
 module.exports = (grunt, appConfig) -> tasks:
   ts:
     default :
-      src: ["build/boot.ts"]
-      outFile: 'build/boot.js'
+      src: ["build/app/app.ts"]
+      outFile: 'build/app.js'
       options:
         target: "ES5"
         module: "system"

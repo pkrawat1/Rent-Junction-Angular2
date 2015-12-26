@@ -6,6 +6,8 @@ module.exports = (grunt, appConfig) -> tasks:
       src: ['build/**/*.ts']
     jade:
       src: ['build/**/*.jade']
+    scss:
+      src: ['build/app.css', 'build/app.css.map', 'build/**/*.scss', 'build/app/scss', 'build/*.cache.css']
 
   copy:
     build:
@@ -21,6 +23,13 @@ module.exports = (grunt, appConfig) -> tasks:
           expand: true
         }
       ]
+    ts: 
+      files:[
+        cwd: 'src'
+        src: [ '**/*.ts']
+        dest: 'build'
+        expand: true
+      ]
 
   connect: 
     server: 
@@ -34,7 +43,7 @@ module.exports = (grunt, appConfig) -> tasks:
       livereload: true
     jade:
       files: 'src/**/*.jade',
-      tasks: [ 'jade' ]
+      tasks: ['stylesheets', 'templates']
     ts:
-      files: 'src/**/*.jade'
-      tasks: ['ts']
+      files: 'src/**/*.ts'
+      tasks: [ 'copy:ts', 'scripts' ]

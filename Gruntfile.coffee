@@ -31,6 +31,11 @@ module.exports = (grunt) ->
         'build/app/components/{,*/}{,*/}*.js'
         'build/app/shared/{,*/}{,*/}*.js'
       ]
+      
+    stylesheets: [
+      'build/app.css'
+      'bower_components/ngprogress/ngProgress.css'
+    ]
 
   # Define the configuration for all the tasks
   configs = require("load-grunt-configs") grunt, appConfig
@@ -46,14 +51,20 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-hashres');
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   #Scripts
   grunt.registerTask 'scripts', [
     'ts', 'clean:ts'#, 'concat'
     ]
 
-  grunt.registerTask 'templates', [
-    'jade', 'clean:jade'#, 'hashres'
+  grunt.registerTask 'stylesheets', [
+    'sass', 'cssmin', 'clean:scss'
   ]
 
-  grunt.registerTask 'build', ['clean:build', 'copy', 'scripts', 'templates', 'connect', 'watch']
+  grunt.registerTask 'templates', [
+    'jade', 'clean:jade', 'hashres'
+  ]
+
+  grunt.registerTask 'build', ['clean:build', 'copy', 'scripts', 'stylesheets', 'templates', 'connect', 'watch']

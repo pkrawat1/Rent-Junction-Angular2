@@ -1,21 +1,25 @@
 import {Component, OnInit} from 'angular2/core';
+import {CategoryService} from '../category/category.service';
 
 @Component({
   selector: 'home',
   templateUrl: './app/components/home/home.html',
   directives: [],
+  bindings: [CategoryService],
   providers: []
 })
-export class HomeComponent {
+
+export class HomeComponent implements OnInit{
   public title = 'home';
 
-  // constructor(private _heroService: HeroService) { }
+  constructor(private _categoryService: CategoryService) { }
 
-  // getHeroes() {
-  //   this._heroService.getHeroes().then(heroes => this.heroes = heroes);
-  // }
+  getCategories() {
+    console.log(this._categoryService.getCategories());
+    //.subscribe(categories => this.categories = categories)
+  }
 
-  // ngOnInit() {
-  //   this.getHeroes();
-  // }
+  ngOnInit() {
+    this.getCategories();
+  }
 }
