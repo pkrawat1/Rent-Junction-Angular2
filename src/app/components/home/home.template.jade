@@ -27,5 +27,5 @@
         .column.text-center.fx-fade-left.fx-easing-sine.fx-speed-500(
           *ngFor= '#sub_category of selectedCategory.sub_categories'
           )
-          a
+          a([routerLink]= '["Products", {subCategoryId: sub_category._id}]')
             show-sub-category([sub_category]= 'sub_category')

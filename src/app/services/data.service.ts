@@ -13,5 +13,10 @@ export class DataService {
     return this.http.get('https://rntjunc.herokuapp.com/api/v1/categories.json')
                     .map((res: Response) => res.json());
   }
+  
+  getProducts(subCategoryId: string){
+    return this.http.get('https://rntjunc.herokuapp.com/api/v1/products/' + subCategoryId)
+                    .map((res: Response) => res.json());
+  }
 
 }

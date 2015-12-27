@@ -1,0 +1,12 @@
+.row
+  br
+  h5 To Buy anything select any product
+  hr
+
+  .row
+    .large-12.small-12.columns.fx-fade-left.fx-easing-sine.fx-speed-500
+      .small-up-2.medium-up-3.large-up-4
+        .column.text-center.fx-fade-left.fx-easing-sine.fx-speed-500(
+          *ngFor= 'product of products'
+          )
+          show-product(product= 'product')

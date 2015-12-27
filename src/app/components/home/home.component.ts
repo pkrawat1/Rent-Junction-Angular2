@@ -9,10 +9,10 @@ import { SubCategoryComponent } from '../sub-category/sub-category.component';
 
 @Component({
   selector: 'home',
-  templateUrl: './app/components/home/home.html',
   directives: [CORE_DIRECTIVES, RouterLink, CategoryComponent, SubCategoryComponent],
   providers: [DataService],
-  pipes: [ThumbnailPipe]
+  pipes: [ThumbnailPipe],
+  templateUrl: './app/components/home/home.html'
 })
 
 
@@ -31,7 +31,7 @@ export class HomeComponent{
 
   getCategories(){
     this._dataService.getCategories()
-        .subscribe((categories:any[]) => {
+        .subscribe((categories:Category[]) => {
           this.categories = categories;
         });
   }

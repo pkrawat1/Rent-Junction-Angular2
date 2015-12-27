@@ -1,0 +1,12 @@
+.thumbnail
+  img(ng-src= '{{product.logo.url}}')
+h5 
+  {{product.name}}
+i.alert.fi-price-tag.large
+small
+  |  Rs {{product.rent}}, 
+  | Mft. {{product.mft_date | date}}
+p {{product.desc}}
+a.button.hollow.expanded(
+  [routerLink]='["ProductDetail", {subCategoryId: product.sub_category_id, productId: product._id}]'
+  ) Buy Now
