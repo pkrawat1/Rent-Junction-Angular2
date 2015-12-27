@@ -1,10 +1,12 @@
 import {Component} from 'angular2/core';
-import {SubCategory} from '../category/category';
+import {SubCategory} from '../../interfaces/category';
+import { ThumbnailPipe } from '../../pipes/thumbnail.pipe';
 
 @Component({
   selector: 'show-sub-category',
-  template: './app/components/sub-category/sub-category.html',
-  inputs: ['sub_category']
+  templateUrl: './app/components/sub-category/sub-category.html',
+  inputs: ['sub_category'],
+  pipes: [ThumbnailPipe]
 })
 export class SubCategoryComponent {
   public sub_category: SubCategory;

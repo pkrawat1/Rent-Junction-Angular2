@@ -13,6 +13,6 @@ export interface SubCategory{
   category_id: string;
 }
 
-interface Logo {
+export interface Logo {
   url: string;
 }

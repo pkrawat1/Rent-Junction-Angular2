@@ -7,11 +7,7 @@
   .small-up-3.medium-up-4.large-up-5(*ngIf= '!selectedCategory')
     .column.text-center.fx-fade-down.fx-easing-sine.fx-speed-500(*ngFor= '#category of categories')
       a((click)="showSubCategories(category)")
-        img(
-          src= '{{category.logo.url | thumbnail:"h_100"}}'
-          )
-
-        p{{category.name}}
+        show-category([category]= 'category')
 
   .row
     .large-2.small-3.columns.fx-fade-right.fx-speed-500(*ngIf='selectedCategory')
@@ -22,8 +18,7 @@
             *ngFor= '#category of categories',
             [class.active]= 'category === selectedCategory'
             )
-            label
-              h6 {{category.name}}
+            show-category([category]= 'category', [selectedCategory]= 'selectedCategory')
 
     .large-10.small-9.columns.fx-fade-left.fx-easing-sine.fx-speed-500(
       *ngIf='selectedCategory'

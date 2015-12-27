@@ -1,6 +1,6 @@
 img(
   src= '{{category.logo.url | thumbnail:"h_100"}}',
-  *ngIf= 'selectedCategory'
+  *ngIf= '!selectedCategory'
   )
 
 label(*ngIf= '!selectedcategory')

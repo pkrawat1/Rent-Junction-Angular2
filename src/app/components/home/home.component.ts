@@ -3,14 +3,14 @@ import { CORE_DIRECTIVES } from 'angular2/common';
 import { RouterLink } from 'angular2/router';
 import { DataService } from '../../services/data.service';
 import { ThumbnailPipe } from '../../pipes/thumbnail.pipe';
-import { Category } from '../category/category';
+import { Category } from '../../interfaces/category';
 import { CategoryComponent } from '../category/category.component';
 import { SubCategoryComponent } from '../sub-category/sub-category.component';
 
 @Component({
   selector: 'home',
   templateUrl: './app/components/home/home.html',
-  directives: [CORE_DIRECTIVES, RouterLink],
+  directives: [CORE_DIRECTIVES, RouterLink, CategoryComponent, SubCategoryComponent],
   providers: [DataService],
   pipes: [ThumbnailPipe]
 })
