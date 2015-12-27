@@ -1,0 +1,10 @@
+img(
+  src= '{{category.logo.url | thumbnail:"h_100"}}',
+  *ngIf= 'selectedCategory'
+  )
+
+label(*ngIf= '!selectedcategory')
+  br  
+  h6 {{category.name}}
+
+p(*ngIf= 'selectedcategory') {{category.name}}
