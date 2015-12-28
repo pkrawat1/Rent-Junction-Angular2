@@ -1,8 +1,10 @@
 import { bootstrap } from 'angular2/platform/browser';
-import { bind } from 'angular2/core';
+import { bind, provide } from 'angular2/core';
 import { FORM_PROVIDERS } from "angular2/common";
 import { ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy } from 'angular2/router';
 import { HTTP_PROVIDERS } from 'angular2/http';
+//import {AuthHttp} from 'angular2-jwt';
+//import {Config, SATELLIZER_PROVIDERS, Auth} from 'ng2-ui-auth';
 import {AppComponent} from './components/app.component';
 
 bootstrap(AppComponent, [

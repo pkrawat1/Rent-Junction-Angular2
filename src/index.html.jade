@@ -5,14 +5,9 @@ html
     link(rel='stylesheet', href='application.min.css')
     script(src="//localhost:35729/livereload.js")
   body
-    // include partials folder
-    // HEADER
-    include partials/_header.html.jade
-    // MAIN BODY
-    include partials/_main.html.jade
-    // FOOTER
-    include partials/_footer.html.jade
-
+    
+    app
+    
     // Libraries
     script(src='node_modules/es6-shim/es6-shim.js')
     script(src='node_modules/angular2/bundles/angular2-polyfills.js')
@@ -22,6 +17,8 @@ html
     script(src='node_modules/angular2/bundles/angular2.dev.js')
     script(src='node_modules/angular2/bundles/router.dev.js')
     script(src='node_modules/angular2/bundles/http.dev.js')
+    //script(src='node_modules/angular2-jwt/angular2-jwt.js')
+    //script(src='node_modules/ng2-ui-auth/export.js')
 
     // Application 
     //- script(src='libs.min.js')

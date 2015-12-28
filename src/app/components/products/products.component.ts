@@ -22,8 +22,8 @@ export class ProductsComponent {
   };
   
   ngOnInit() {
-      this.title = 'Products';
-      this.getProducts(this.subCategoryId);
+    this.title = 'Products';
+    this.getProducts(this.subCategoryId);
   }
   
   getProducts(subCategoryId: string){

@@ -24,7 +24,9 @@ module.exports = (grunt) ->
           'node_modules/systemjs/dist/system.src.js'
           'node_modules/typescript/lib/typescript.js'
           'node_modules/rxjs/bundles/Rx.js'
-          'node_modules/angular2/bundles/*.dev.js'
+          'node_modules/angular2/bundles/*.dev.js',
+          #'node_modules/angular2-jwt/angular2-jwt.js',
+          #'node_modules/ng2-ui-auth/export.js'
         ]
       app: [
         'build/boot.js'

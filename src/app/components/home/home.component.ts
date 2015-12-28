@@ -25,8 +25,8 @@ export class HomeComponent{
   constructor(private _dataService: DataService) {}
 
   ngOnInit() {
-      this.title = 'Categories';
-      this.getCategories();
+    this.title = 'Categories';
+    this.getCategories();
   }
 
   getCategories(){
