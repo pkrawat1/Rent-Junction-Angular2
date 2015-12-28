@@ -12,7 +12,7 @@ import { ProductDetailsComponent } from './products/product-details.component'
 @RouteConfig([
   { path: '/', as: 'Home', component: HomeComponent, useAsDefault: true },
   { path: '/products/:subCategoryId', as: 'Products', component: ProductsComponent},
-  { path: '/product/:subCategoryId/:productId', as: 'ProductDetail', component: ProductDetailsComponent}
+  { path: '/product/:productId', as: 'ProductDetail', component: ProductDetailsComponent}
 ])
 export class AppComponent {
 

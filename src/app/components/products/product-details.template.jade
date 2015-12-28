@@ -1,0 +1,24 @@
+.row(*ngIf= 'selectedProduct')
+  br
+  h5 Product Details
+  hr
+
+  .large-4.columns.text-center(
+    class= 'fx-fade-left fx-easing-sine fx-speed-500'
+    )
+    img(src= '{{selectedProduct.logo.url | thumbnail:"h_200"}}')
+
+  .large-8.columns.text-left(
+    class= 'fx-fade-right fx-easing-sine fx-speed-500'
+    )
+    h4 {{selectedProduct.name}} ({{selectedProduct.desc}})
+    p
+      |Rs {{selectedProduct.rent}}
+      br
+      |Mft. {{selectedProduct.mft_date}}
+
+    h5
+      button.button.hollow.warning Add to Cart
+
+.row(*ngIf= '!selectedProduct')
+  h3.text-center Product Discontinued!!
