@@ -7,7 +7,7 @@ import { ProductComponent } from './product.component'
 
 @Component({
   selector: 'products',
-  directives: [RouterLink, RouteParams, ProductComponent],
+  directives: [RouterLink, ProductComponent],
   providers: [DataService],
   pipes: [ThumbnailPipe],
   templateUrl: './app/components/products/products.html'
@@ -18,7 +18,6 @@ export class ProductsComponent {
   products: Product[];
   
   constructor(private _data_service: DataService, params: RouteParams){
-    console.log('here');
     this.subCategoryId = params.get('subCategoryId');
   };
   

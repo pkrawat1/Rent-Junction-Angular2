@@ -10,12 +10,12 @@ export class DataService {
   }
   
   getCategories() {
-    return this.http.get('https://rntjunc.herokuapp.com/api/v1/categories.json')
+    return this.http.get('http://localhost:3000/api/v1/categories.json')
                     .map((res: Response) => res.json());
   }
   
   getProducts(subCategoryId: string){
-    return this.http.get('https://rntjunc.herokuapp.com/api/v1/products/' + subCategoryId)
+    return this.http.get('http://localhost:3000/api/v1/products/' + subCategoryId)
                     .map((res: Response) => res.json());
   }
 

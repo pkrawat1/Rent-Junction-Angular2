@@ -34,7 +34,7 @@ module.exports = (grunt, appConfig) -> tasks:
   connect: 
     server: 
       options:
-        port: 3000,
+        port: 4000,
         base: 'build',
         hostname: '*'
 
