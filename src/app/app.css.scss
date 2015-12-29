@@ -45,3 +45,8 @@ $fi-path: "fonts";
 .pointer{
   cursor: pointer;
 }
+
+#nprogress .bar {
+  background: rgba(red, 0.5) !important;
+  height: 4px !important;
+}

@@ -30,9 +30,11 @@ export class HomeComponent{
   }
 
   getCategories(){
+    NProgress.start();
     this._dataService.getCategories()
         .subscribe((categories:Category[]) => {
           this.categories = categories;
+          NProgress.done();
         });
   }
 

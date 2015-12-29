@@ -20,7 +20,8 @@
     "toastr": "~2.1.2",
     "foundation-icon-fonts": "*",
     "foundation": "~5.5.3",
-    "foundation-sites": "~6.0.3"
+    "foundation-sites": "~6.0.3",
+    "nprogress": "~0.2.0"
   },
   "devDependencies": {
     "motion-ui": "~1.1.0"

@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/tsd.d.ts" />
+
 import { Component } from 'angular2/core';
 import { ROUTER_DIRECTIVES, RouteConfig } from 'angular2/router';
 import { HeaderComponent } from './layout/header.component';
@@ -16,5 +18,9 @@ import { ProductDetailsComponent } from './products/product-details.component'
   { path: '/product/:productId', as: 'ProductDetail', component: ProductDetailsComponent}
 ])
 export class AppComponent {
-
+  constructor(){
+    NProgress.configure({
+      showSpinner: false
+    })
+  }
 }

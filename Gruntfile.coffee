@@ -25,6 +25,11 @@ module.exports = (grunt) ->
           'node_modules/typescript/lib/typescript.js'
           'node_modules/rxjs/bundles/Rx.js'
           'node_modules/angular2/bundles/*.dev.js',
+          'bower_components/jquery/dist/jquery.js',
+          'bower_components/toastr/toastr.js',
+          'bower_components/what-input/what-input.js',
+          'bower_components/foundation-sites/dist/foundation.js',
+          'bower_components/nprogress/nprogress.js',
           #'node_modules/angular2-jwt/angular2-jwt.js',
           #'node_modules/ng2-ui-auth/export.js'
         ]
@@ -36,7 +41,7 @@ module.exports = (grunt) ->
       
     stylesheets: [
       'build/app.css'
-      'bower_components/ngprogress/ngProgress.css'
+      'bower_components/nprogress/nprogress.css'
     ]
 
   # Define the configuration for all the tasks
@@ -69,4 +74,4 @@ module.exports = (grunt) ->
     'jade', 'clean:jade', 'hashres'
   ]
 
-  grunt.registerTask 'build', ['clean:build', 'copy', 'scripts', 'stylesheets', 'templates', 'connect', 'watch']
+  grunt.registerTask 'serve', ['clean:build', 'copy', 'scripts', 'stylesheets', 'templates', 'connect', 'watch']
