@@ -9,7 +9,7 @@ import { ProductDetailsComponent } from './products/product-details.component'
 
 @Component({ 
   selector: 'app',
-  template: `<header></header><router-outlet></router-outlet>`,
+  templateUrl: './app/components/app.html',
   directives: [ROUTER_DIRECTIVES, HeaderComponent]
 })
 @RouteConfig([
@@ -21,6 +21,7 @@ export class AppComponent {
   constructor(){
     NProgress.configure({
       showSpinner: false
-    })
+    });
+    $(document).foundation();
   }
 }

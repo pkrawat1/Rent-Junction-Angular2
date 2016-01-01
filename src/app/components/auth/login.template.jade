@@ -1,0 +1,49 @@
+modal(title='Login')
+  .large-7.columns.border-right.dark
+    br
+    form(
+      role='form',
+      method='post',
+      (submit)="login()",
+      data-abide,
+      novalidate
+      )
+
+      .form-group
+        .input-group
+          span.input-group-label
+            b.fi-at-sign.large
+          input.form-control.input-group-field(
+            type='email',
+            placeholder='Enter Email',
+            required
+            )
+
+      .form-group
+        .input-group
+          span.input-group-label
+            b.fi-asterisk.large
+          input.form-control.input-group-field(
+            type='password'
+            placeholder='Password',
+            required,
+            )
+      button.button.drop-shadow.large-5(type='submit') Login
+
+  .large-5.columns
+    br
+    button.button.hollow.expanded.drop-shadow(
+      ng-click= 'authenticate("facebook")'
+    )
+      i.fi-social-facebook.size-2
+      strong.size-1  Facebook
+    button.button.hollow.expanded.alert.drop-shadow(
+      ng-click= 'authenticate("google")'
+    )
+      i.fi-social-google-plus.size-2
+      strong.size-1  Google
+
+  .large-12.columns
+    label
+      | New to Rent Junction 
+      a(ng-click='toggleSignUpModal()') Sign Up
