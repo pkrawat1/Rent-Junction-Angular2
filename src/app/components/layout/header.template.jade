@@ -5,17 +5,17 @@
         a(href='#') 24/7 Customer Support
         a(href='#')  | Select City 
         a(
-          ng-if="!_auth.isAuthenticated()"
-          ng-click='_auth.toggleSignUpModal()'
+          *ngIf="!isAuthenticated()",
+          (click)='toggleModalStatus("sign-up-form")'
           )  | Sign Up 
         a(
-          ng-if="!_auth.isAuthenticated()"
-          ng-click= "_auth.toggleSignInModal()"
+          *ngIf="!isAuthenticated()",
+          (click)= 'toggleModalStatus("login-form")',
           )  | Log In 
         a(
-          href='#'
-          ng-if="_auth.isAuthenticated()"
-          ng-click= '_auth.logout()'
+          href='#',
+          *ngIf="isAuthenticated()",
+          (click)= 'logout()'
           )  | Log Out 
   br
   nav.row(data-topbar='', role='navigation')
@@ -43,3 +43,4 @@
               .badge.warning.large 0
 
 login
+sign-up

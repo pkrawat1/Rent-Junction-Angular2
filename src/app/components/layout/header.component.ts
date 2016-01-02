@@ -9,4 +9,16 @@ import { SignUpComponent } from '../auth/sign-up.component';
   directives: [RouterLink, LoginComponent, SignUpComponent]
 })
 export class HeaderComponent {
+  public modalStatus = {'login-form': false, 'sign-up-form': false};
+  
+  isAuthenticated(){
+    return false;
+  }
+  
+  toggleModalStatus(modalFor: string){
+    this.modalStatus[modalFor] = !this.modalStatus[modalFor];
+    $('.'+modalFor).foundation('open');
+  }
+  
+  logout(){};
 }
