@@ -6,7 +6,7 @@ Installation
 Clone this repo and execute in your favourite shell:
 
 ```
-npm i -g grunt to install gulp globally (if you don't have it installed already)
+npm i -g grunt to install grunt globally (if you don't have it installed already)
 npm i to install local npm dependencies
 
 bower install
