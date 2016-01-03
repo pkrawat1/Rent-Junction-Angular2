@@ -4,7 +4,7 @@ modal(title='Login', visible='modalStatus.login-form', klass='login-form')
     form(
       role='form',
       method='post',
-      (submit)="login()",
+      (submit)="login(email, password)",
       data-abide,
       novalidate
       )
@@ -16,7 +16,8 @@ modal(title='Login', visible='modalStatus.login-form', klass='login-form')
           input.form-control.input-group-field(
             type='email',
             placeholder='Enter Email',
-            required
+            required,
+            [(ngModel)]='email' 
             )
 
       .form-group
@@ -24,9 +25,10 @@ modal(title='Login', visible='modalStatus.login-form', klass='login-form')
           span.input-group-label
             b.fi-asterisk.large
           input.form-control.input-group-field(
-            type='password'
+            type='password',
             placeholder='Password',
             required,
+            [(ngModel)]='password'
             )
       button.button.drop-shadow.large-5(type='submit') Login
 
@@ -46,4 +48,4 @@ modal(title='Login', visible='modalStatus.login-form', klass='login-form')
   .large-12.columns
     label
       | New to Rent Junction 
-      a(ng-click='toggleSignUpModal()') Sign Up
+      a(ng-click='toggleModalStatus("sign-up-form")') Sign Up

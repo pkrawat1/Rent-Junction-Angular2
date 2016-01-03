@@ -12,7 +12,7 @@ export class HeaderComponent {
   public modalStatus = {'login-form': false, 'sign-up-form': false};
   
   isAuthenticated(){
-    return false;
+    return localStorage.getItem('jwt');
   }
   
   toggleModalStatus(modalFor: string){
@@ -20,5 +20,8 @@ export class HeaderComponent {
     $('.'+modalFor).foundation('open');
   }
   
-  logout(){};
+  logout(){
+    localStorage.removeItem('jwt');
+    toastr.info('You have been logged out');
+  };
 }
