@@ -5,7 +5,6 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class AuthService {
-  public isAuthenticated: boolean = false;
 
   constructor(private http: Http) { 
     this.http = http;
@@ -26,7 +25,6 @@ export class AuthService {
     .subscribe((data) => {
       // Once we get the JWT in the response, we save it into localStorage
       localStorage.setItem('jwt', data.json().token);
-      this.isAuthenticated = true;
       toastr.success('You have successfully signed in!');
       $('.login-form').foundation('close');
     })
