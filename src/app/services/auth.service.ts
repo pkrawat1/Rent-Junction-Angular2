@@ -23,10 +23,15 @@ export class AuthService {
       {headers: headers}
     )
     .subscribe((data) => {
-      // Once we get the JWT in the response, we save it into localStorage
-      localStorage.setItem('jwt', data.json().token);
-      toastr.success('You have successfully signed in!');
-      $('.login-form').foundation('close');
+      if(data.json().status == 'success'){
+        // Once we get the JWT in the response, we save it into localStorage
+        localStorage.setItem('jwt', data.json().token);
+        toastr.success('You have successfully signed in!');
+        $('.login-form').foundation('close'); 
+      }
+      else{
+        toastr.error(data.json().message);
+      }
     })
   }
 

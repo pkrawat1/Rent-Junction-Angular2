@@ -3,7 +3,8 @@ export interface Category {
   logo: Logo;
   name: string;
   s_name: string;
-  sub_categories: SubCategory;
+  sub_categories: SubCategory[];
+  _id: String;
 }
 
 export interface SubCategory{

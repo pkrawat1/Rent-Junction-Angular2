@@ -6,6 +6,7 @@ import { HeaderComponent } from './layout/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './products/product-details.component'
+import { NewProductComponent } from './products/new-product.component'
 
 @Component({ 
   selector: 'app',
@@ -15,7 +16,8 @@ import { ProductDetailsComponent } from './products/product-details.component'
 @RouteConfig([
   { path: '/home', as: 'Home', component: HomeComponent, useAsDefault: true },
   { path: '/products/:subCategoryId', as: 'Products', component: ProductsComponent},
-  { path: '/product/:productId', as: 'ProductDetail', component: ProductDetailsComponent}
+  { path: '/product/:productId', as: 'ProductDetail', component: ProductDetailsComponent},
+  { path: '/product/new', as: 'NewProductComponent', component: NewProductComponent}
 ])
 export class AppComponent {
   constructor(){

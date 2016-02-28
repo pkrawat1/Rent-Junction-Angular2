@@ -1,7 +1,11 @@
 .row
   
   br
-  h5 To Buy or Find anything select an option below:
+  h5
+    | To Buy or Find anything select an option below:
+    button.button.hollow.drop-shadow.move-right(
+      [routerLink]= '["NewProductComponent"]'
+    ) New Product
   hr
 
   .small-up-3.medium-up-4.large-up-5(*ngIf= '!selectedCategory')

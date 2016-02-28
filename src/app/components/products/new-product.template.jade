@@ -1,0 +1,70 @@
+.row
+  form(
+      [ngFormModel]="product_form",
+      (submit)="save_product($event)",
+      novalidate
+      )
+    br
+    h5
+      | Sell your product here:
+    hr
+    
+    .large-5.columns
+      br
+      .form-group
+        img(ng-show="product_form.value.logo" src="{{product_form.value.logo.url}}")
+        input(type="file" ngControl='logo' accept="image/*")
+      
+    .large-7.columns.border-left.dark
+      br
+      .form-group.large-6
+        .input-group
+          input.form-control.input-group-field(
+            type='text',
+            placeholder='Enter Product Name',
+            required,
+            ngControl='name'
+            )
+            
+      .form-group.large-6
+        select((change)='showSubCategories($event.target.value)' ngControl="category_id")
+          option(value="" disabled) Select Category
+          option(*ngFor='#category of categories' value='{{category._id}}'){{category.name}}
+      
+      .form-group.large-6(*ngIf='selectedCategory')
+        select(ngControl="sub_category_id")
+          option(value="" disabled) Select Sub Category
+          option(
+            *ngFor='#sub_category of selectedCategory.sub_categories',
+            value='{{sub_category._id}}'
+            )
+            {{sub_category.name}}
+      
+      .form-group.large-6
+        .input-group
+          input.form-control.input-group-field(
+            type='text',
+            placeholder='Manufacture Date',
+            required,
+            ngControl='mft_date'
+            )
+      
+      .form-group.large-6
+        .input-group
+          input.form-control.input-group-field(
+            type='text',
+            placeholder='Rent Per Day',
+            required,
+            ngControl='rent'
+            )
+
+      .form-group.large-8
+        .input-group
+          textarea.form-control.input-group-field(
+            type='text',
+            placeholder='Description',
+            required,
+            rows=5,
+            ngControl='desc'
+            )
+      button.button.drop-shadow.large-3(type='submit') Save
