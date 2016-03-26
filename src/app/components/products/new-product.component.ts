@@ -62,8 +62,16 @@ export class NewProductComponent {
     console.log(this.product_form);
 
     // We call our API to log the user in. The username and password are entered by the user
-    var headers = new Headers();
+    let headers = new Headers();
+    let jwt = localStorage.getItem('jwt');
     headers.append('Content-Type', 'application/json');
+    
+    if(jwt) {
+      headers.append('Authorization', 'Bearer ' + jwt);
+    }
+    else{
+      return null;
+    }
     
     this.http.post('http://localhost:3000/api/v1/products',
       JSON.stringify({product: this.product_form.value}),
