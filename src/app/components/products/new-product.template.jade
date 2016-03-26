@@ -1,8 +1,7 @@
 .row
   form(
       [ngFormModel]="product_form",
-      (submit)="save_product($event)",
-      novalidate
+      (submit)="save_product($event)"
       )
     br
     h5
@@ -25,11 +24,13 @@
             required,
             ngControl='name'
             )
+        control-messages(control="name")
             
       .form-group.large-6
         select((change)='showSubCategories($event.target.value)' ngControl="category_id")
           option(value="" disabled) Select Category
-          option(*ngFor='#category of categories' value='{{category._id}}'){{category.name}}
+          option(*ngFor='#category of categories' value='{{category._id}}') {{category.name}}
+        control-messages(control="category_id")
       
       .form-group.large-6(*ngIf='selectedCategory')
         select(ngControl="sub_category_id")
@@ -37,8 +38,8 @@
           option(
             *ngFor='#sub_category of selectedCategory.sub_categories',
             value='{{sub_category._id}}'
-            )
-            {{sub_category.name}}
+            ) {{sub_category.name}}
+        control-messages(control="sub_category_id")
       
       .form-group.large-6
         .input-group
@@ -48,6 +49,7 @@
             required,
             ngControl='mft_date'
             )
+        control-messages(control="mft_date")
       
       .form-group.large-6
         .input-group
@@ -57,6 +59,7 @@
             required,
             ngControl='rent'
             )
+        control-messages(control="rent")
 
       .form-group.large-8
         .input-group
@@ -67,4 +70,6 @@
             rows=5,
             ngControl='desc'
             )
-      button.button.drop-shadow.large-3(type='submit') Save
+        control-messages(control="desc")
+        
+      button.button.drop-shadow.large-3(type='submit' [disabled]="!product_form.valid") Save

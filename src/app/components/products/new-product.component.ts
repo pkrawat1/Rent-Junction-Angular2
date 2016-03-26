@@ -6,11 +6,13 @@ import { DataService } from '../../services/data.service';
 import {RouterLink, RouteParams} from 'angular2/router';
 import { ThumbnailPipe } from '../../pipes/thumbnail.pipe';
 import { Http, Response, Headers } from 'angular2/http';
+import {ControlMessages} from '../../directives/control-messages.component';
+import {ValidationService} from '../../services/validation.service';
 
 @Component({
   selector: 'new-product',
   templateUrl: './app/components/products/new-product.html',
-  directives: [RouterLink],
+  directives: [RouterLink, ControlMessages],
   pipes: [ThumbnailPipe],
   providers: [DataService]
 })

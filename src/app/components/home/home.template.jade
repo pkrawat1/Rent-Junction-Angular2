@@ -1,9 +1,10 @@
 .row
-  
+
   br
   h5
     | To Buy or Find anything select an option below:
     button.button.hollow.drop-shadow.move-right(
+      *ngIf="isAuthenticated()",
       [routerLink]= '["NewProductComponent"]'
     ) New Product
   hr

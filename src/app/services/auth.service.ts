@@ -10,7 +10,7 @@ export class AuthService {
     this.http = http;
   }
   
-  login(email, password) {
+  login(auth_params) {
     // This will be called when the user clicks on the Login button
     event.preventDefault();
 
@@ -19,7 +19,7 @@ export class AuthService {
     headers.append('Content-Type', 'application/json');
     
     this.http.post('http://localhost:3000/api/v1/auth/login',
-      JSON.stringify({email, password}),
+      JSON.stringify(auth_params),
       {headers: headers}
     )
     .subscribe((data) => {

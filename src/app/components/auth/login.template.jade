@@ -2,11 +2,8 @@ modal(title='Login', visible='modalStatus.login-form', klass='login-form')
   .large-7.columns.border-right.dark
     br
     form(
-      role='form',
-      method='post',
-      (submit)="login(email, password)",
-      data-abide,
-      novalidate
+      [ngFormModel]="userForm",
+      (submit)="login($event)"
       )
 
       .form-group
@@ -17,8 +14,10 @@ modal(title='Login', visible='modalStatus.login-form', klass='login-form')
             type='email',
             placeholder='Enter Email',
             required,
-            [(ngModel)]='email' 
+            ngControl='email',
+            [ngClass]="{'is-invalid-input': userForm.value.email}"
             )
+        control-messages(control="email")
 
       .form-group
         .input-group
@@ -28,9 +27,11 @@ modal(title='Login', visible='modalStatus.login-form', klass='login-form')
             type='password',
             placeholder='Password',
             required,
-            [(ngModel)]='password'
+            ngControl='password'
             )
-      button.button.drop-shadow.large-5(type='submit') Login
+         control-messages(control="password")
+         
+      button.button.drop-shadow.large-5(type='submit' [disabled]="!userForm.valid") Login
 
   .large-5.columns
     br

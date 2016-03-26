@@ -20,9 +20,13 @@ import { SubCategoryComponent } from '../sub-category/sub-category.component';
 export class HomeComponent{
   title: string;
   categories: Category[] = [];
-  selectedCategory: Category; 
+  selectedCategory: Category;
 
   constructor(private _dataService: DataService) {}
+
+  isAuthenticated(){
+    return localStorage.getItem('jwt');
+  }
 
   ngOnInit() {
     this.title = 'Categories';
