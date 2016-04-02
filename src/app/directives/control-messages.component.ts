@@ -1,10 +1,10 @@
-import {Component, Host} from 'angular2/core';
-import {NgFormModel} from 'angular2/common';
-import {ValidationService} from '../services/validation.service';
+import {Component, Host} from "angular2/core";
+import {NgFormModel} from "angular2/common";
+import {ValidationService} from "../services/validation.service";
 
 @Component({
-    selector: 'control-messages',
-    inputs: ['controlName: control'],
+    selector: "control-messages",
+    inputs: ["controlName: control"],
     template: `<span class="form-error is-visible" *ngIf="errorMessage !== null">{{errorMessage}}</span>`
 })
 export class ControlMessages {

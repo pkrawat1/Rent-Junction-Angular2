@@ -11,7 +11,7 @@ module.exports = (grunt) ->
     config:
       src: "config/grunt/*"
 
-    app: 
+    app:
       path: require("./bower.json").appPath or "src"
       dist: "dist"
       test: "test"
@@ -25,20 +25,21 @@ module.exports = (grunt) ->
           'node_modules/typescript/lib/typescript.js'
           'node_modules/rxjs/bundles/Rx.js'
           'node_modules/angular2/bundles/*.dev.js',
+          'node_modules/angular2-jwt/angular2-jwt.js',
+          'node_modules/angular2-jwt/angular2-jwt.js.map',
+          #'node_modules/ng2-ui-auth/export.js'
           'bower_components/jquery/dist/jquery.js',
           'bower_components/toastr/toastr.js',
           'bower_components/what-input/what-input.js',
           'bower_components/foundation-sites/dist/foundation.js',
           'bower_components/nprogress/nprogress.js',
-          #'node_modules/angular2-jwt/angular2-jwt.js',
-          #'node_modules/ng2-ui-auth/export.js'
         ]
       app: [
         'build/boot.js'
         'build/app/components/{,*/}{,*/}*.js'
         'build/app/shared/{,*/}{,*/}*.js'
       ]
-      
+
     stylesheets: [
       'build/app.css'
       'bower_components/nprogress/nprogress.css'

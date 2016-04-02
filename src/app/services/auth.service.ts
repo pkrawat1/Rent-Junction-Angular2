@@ -1,13 +1,24 @@
 import { Injectable } from 'angular2/core';
 import { Http, Response, Headers } from 'angular2/http';
+import {RouterLink, RouteParams, Location, Router} from 'angular2/router';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 
 export class AuthService {
 
-  constructor(private http: Http) { 
+  constructor(private http: Http, private location: Location, private router: Router) { 
     this.http = http;
+  }
+  
+  isAuthenticated(){
+    return localStorage.getItem('jwt');
+  }
+  
+  unAuthorized(){
+    toastr.error('You are not Authorized')
+    this.location.replaceState('/'); // clears browser history so they can't navigate with back button
+    this.router.navigate(['Home']);
   }
   
   login(auth_params) {

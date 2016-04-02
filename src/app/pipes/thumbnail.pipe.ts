@@ -1,9 +1,9 @@
-import { Pipe } from 'angular2/core';
+import { Pipe } from "angular2/core";
 
-@Pipe({ name: 'thumbnail' })
+@Pipe({ name: "thumbnail" })
 export class ThumbnailPipe {
 
-  transform(imageUrl:string, modifiers:string){
-    return imageUrl && imageUrl.replace('upload', 'upload/' + modifiers);
+  transform(imageUrl: string, modifiers: string) {
+    return imageUrl && imageUrl.replace("upload", "upload/" + modifiers);
    }
 }

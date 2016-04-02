@@ -1,6 +1,6 @@
-import { Logo } from './category';
+import { Logo } from "./category";
 
-export interface Product{
+export interface Product {
   created_at: string;
   desc: string;
   logo: Logo;

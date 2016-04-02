@@ -26,7 +26,7 @@ html
     script(src='bower_components/nprogress/nprogress.js')
     
     //Additional Plugins
-    //script(src='node_modules/angular2-jwt/angular2-jwt.js')
+    script(src='node_modules/angular2-jwt/angular2-jwt.js')
     //script(src='node_modules/ng2-ui-auth/export.js')
 
     // Application 
@@ -35,8 +35,10 @@ html
 
     script.
       System.config({
-        packages: {'app': {defaultExtension: 'js'}}
+        packages: {'app': {defaultExtension: 'js'}},
+        map: {
+          "angular2-jwt": "node_modules/angular2-jwt/angular2-jwt.js"
+        }
       });
       System.import('app/bootstrap.js')
       .then(null, console.error.bind(console));
-

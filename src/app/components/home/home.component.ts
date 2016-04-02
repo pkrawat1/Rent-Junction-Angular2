@@ -1,48 +1,48 @@
-import { Component } from 'angular2/core';
-import { CORE_DIRECTIVES } from 'angular2/common';
-import { RouterLink } from 'angular2/router';
-import { DataService } from '../../services/data.service';
-import { ThumbnailPipe } from '../../pipes/thumbnail.pipe';
-import { Category } from '../../interfaces/category';
-import { CategoryComponent } from '../category/category.component';
-import { SubCategoryComponent } from '../sub-category/sub-category.component';
+import { Component } from "angular2/core";
+import { CORE_DIRECTIVES } from "angular2/common";
+import { RouterLink } from "angular2/router";
+import { DataService } from "../../services/data.service";
+import { ThumbnailPipe } from "../../pipes/thumbnail.pipe";
+import { Category } from "../../interfaces/category";
+import { CategoryComponent } from "../category/category.component";
+import { SubCategoryComponent } from "../sub-category/sub-category.component";
 
 @Component({
-  selector: 'home',
+  selector: "home",
   directives: [CORE_DIRECTIVES, RouterLink, CategoryComponent, SubCategoryComponent],
   providers: [DataService],
   pipes: [ThumbnailPipe],
-  templateUrl: './app/components/home/home.html'
+  templateUrl: "./app/components/home/home.html"
 })
 
 
 
-export class HomeComponent{
+export class HomeComponent {
   title: string;
   categories: Category[] = [];
   selectedCategory: Category;
 
   constructor(private _dataService: DataService) {}
 
-  isAuthenticated(){
-    return localStorage.getItem('jwt');
+  isAuthenticated() {
+    return localStorage.getItem("jwt");
   }
 
   ngOnInit() {
-    this.title = 'Categories';
+    this.title = "Categories";
     this.getCategories();
   }
 
-  getCategories(){
+  getCategories() {
     NProgress.start();
     this._dataService.getCategories()
-        .subscribe((categories:Category[]) => {
+        .subscribe((categories: Category[]) => {
           this.categories = categories;
           NProgress.done();
         });
   }
 
-  showSubCategories(category: Category){
+  showSubCategories(category: Category) {
     this.selectedCategory = category;
   }
 }

@@ -1,15 +1,15 @@
-import {Component} from 'angular2/core';
-import { ModalComponent } from '../modal/modal.component';
+import {Component} from "angular2/core";
+import { ModalComponent } from "../modal/modal.component";
 
 @Component({
-  selector: 'sign-up',
-  templateUrl: './app/components/auth/sign-up.html',
+  selector: "sign-up",
+  templateUrl: "./app/components/auth/sign-up.html",
   directives: [ModalComponent]
 })
 export class SignUpComponent {
   public user: any;
-  
-  login(){
-    alert('hello');
+
+  login() {
+    alert("hello");
   }
 }

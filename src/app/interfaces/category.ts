@@ -7,7 +7,7 @@ export interface Category {
   _id: String;
 }
 
-export interface SubCategory{
+export interface SubCategory {
   logo: Logo;
   name: string;
   _id: string;
