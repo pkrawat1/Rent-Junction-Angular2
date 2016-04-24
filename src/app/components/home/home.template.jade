@@ -2,11 +2,13 @@
 
   br
   h5
-    | To Buy or Find anything select an option below:
-    button.button.hollow.drop-shadow.move-right(
-      *ngIf="isAuthenticated()",
-      [routerLink]= '["NewProductComponent"]'
-    ) New Product
+    .medium-10.columns
+      | To Buy or Find anything select an option below:
+    .medium-2.columns.text-right
+      button.button.hollow.drop-shadow.move-right(
+        *ngIf="isAuthenticated()",
+        [routerLink]= '["NewProductComponent"]'
+      ) New Product
   hr
 
   .small-up-3.medium-up-4.large-up-5(*ngIf= '!selectedCategory')

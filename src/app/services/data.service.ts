@@ -17,7 +17,7 @@ export class DataService {
   }
 
   getProducts(subCategoryId: string) {
-    return this.http.get("http://localhost:3000/api/v1/products/" + subCategoryId)
+    return this.http.get("http://localhost:3000/api/v1/categories/products/" + subCategoryId)
                     .map((res: Response) => res.json());
   }
 
