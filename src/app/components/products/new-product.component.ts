@@ -3,7 +3,7 @@ import {FORM_PROVIDERS, FormBuilder, Validators} from "angular2/common";
 import {Product} from "../../interfaces/product";
 import { Category } from "../../interfaces/category";
 import { DataService } from "../../services/data.service";
-import {RouterLink, RouteParams} from "angular2/router";
+import {RouterLink, RouteParams, Router} from "angular2/router";
 import { ThumbnailPipe } from "../../pipes/thumbnail.pipe";
 import { Http, Response, Headers } from "angular2/http";
 import {ControlMessages} from "../../directives/control-messages.component";
@@ -27,7 +27,7 @@ export class NewProductComponent {
 
   constructor(
     private _dataService: DataService, private http: Http, private fb: FormBuilder,
-    private authService: AuthService) {
+    private authService: AuthService, private router: Router) {
 
     !authService.isAuthenticated() && authService.unAuthorized();
 
@@ -87,6 +87,7 @@ export class NewProductComponent {
     .subscribe((data) => {
       if (data.json().status) {
         toastr.success("Product Saved Successfully");
+        this.router.parent.navigate(["ProductDetail", {productId: data.json().product_id}]);
       }
       else {
         toastr.error("Invalid/Empty Data Entered");
