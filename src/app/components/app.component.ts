@@ -19,10 +19,10 @@ import { NewProductComponent } from "./products/new-product.component";
   { path: "/", component: HomeComponent},
   { path: "/products/:subCategoryId", component: ProductsComponent},
   { path: "/product/:productId", component: ProductDetailsComponent},
-  { path: "/product/new", component: NewProductComponent}
+  { path: "/product_new", component: NewProductComponent}
 ])
 export class AppComponent {
-  constructor() {
+  ngOnInit() {
     NProgress.configure({
       showSpinner: false
     });

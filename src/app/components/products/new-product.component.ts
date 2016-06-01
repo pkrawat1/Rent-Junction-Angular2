@@ -87,7 +87,7 @@ export class NewProductComponent {
     .subscribe((data) => {
       if (data.json().status) {
         toastr.success("Product Saved Successfully");
-        this.router.navigate(["ProductDetail", {productId: data.json().product_id}]);
+        this.router.navigate(["/product/", data.json().product_id]);
       }
       else {
         toastr.error("Invalid/Empty Data Entered");
