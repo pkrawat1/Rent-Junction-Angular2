@@ -1,12 +1,12 @@
-import {Component} from "angular2/core";
-import {RouterLink} from "angular2/router";
+import {Component} from "@angular/core";
+import {ROUTER_PROVIDERS} from "@angular/router";
 import { LoginComponent } from "../auth/login.component";
 import { SignUpComponent } from "../auth/sign-up.component";
 
 @Component({
   selector: "header",
   templateUrl: "./app/components/layout/header.html",
-  directives: [RouterLink, LoginComponent, SignUpComponent]
+  directives: [LoginComponent, SignUpComponent]
 })
 export class HeaderComponent {
   public modalStatus = {"login-form": false, "sign-up-form": false};

@@ -1,5 +1,5 @@
-import {Component} from "angular2/core";
-import {FORM_PROVIDERS, FormBuilder, Validators, NgClass} from "angular2/common";
+import {Component} from "@angular/core";
+import {FORM_PROVIDERS, FormBuilder, Validators, NgClass} from "@angular/common";
 import { ModalComponent } from "../modal/modal.component";
 import { ThumbnailPipe } from "../../pipes/thumbnail.pipe";
 import {AuthService} from "../../services/auth.service";

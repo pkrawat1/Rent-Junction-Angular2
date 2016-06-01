@@ -1,13 +1,13 @@
-import {Component} from "angular2/core";
+import {Component} from "@angular/core";
 import {Product} from "../../interfaces/product";
-import {RouterLink, RouteParams} from "angular2/router";
+import {RouteSegment} from "@angular/router";
 import {DataService} from "../../services/data.service";
 import { ThumbnailPipe } from "../../pipes/thumbnail.pipe";
 
 @Component({
   selector: "product-details",
   templateUrl: "./app/components/products/product-details.html",
-  directives: [RouterLink],
+  directives: [],
   pipes: [ThumbnailPipe],
   providers: [DataService]
 })
@@ -17,9 +17,9 @@ export class ProductDetailsComponent {
   productId: string;
   selectedProduct: Product;
 
-  constructor(private _data_service: DataService, params: RouteParams) {
-    this.subCategoryId = params.get("subCategoryId");
-    this.productId = params.get("productId");
+  constructor(private _data_service: DataService, params: RouteSegment) {
+    this.subCategoryId = params.getParam("subCategoryId");
+    this.productId = params.getParam("productId");
   };
 
   ngOnInit() {

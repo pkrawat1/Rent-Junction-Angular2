@@ -1,6 +1,8 @@
-import { Injectable } from 'angular2/core';
-import { Http, Response, Headers } from 'angular2/http';
-import {RouterLink, RouteParams, Location, Router} from 'angular2/router';
+
+import { Injectable } from "@angular/core";
+import { Http, Response, Headers } from '@angular/http';
+import {RouteSegment, Router} from '@angular/router';
+import {Location} from '@angular/common';
 import 'rxjs/add/operator/map';
 
 @Injectable()

@@ -9,14 +9,10 @@ html
     app
     
     //Angular Libraries
-    script(src='node_modules/es6-shim/es6-shim.js')
-    script(src='node_modules/angular2/bundles/angular2-polyfills.js')
+    script(src='node_modules/es6-shim/es6-shim.min.js')
     script(src='node_modules/systemjs/dist/system.src.js')
-    script(src='node_modules/typescript/lib/typescript.js')
-    script(src='node_modules/rxjs/bundles/Rx.js')
-    script(src='node_modules/angular2/bundles/angular2.dev.js')
-    script(src='node_modules/angular2/bundles/router.dev.js')
-    script(src='node_modules/angular2/bundles/http.dev.js')
+    script(src='node_modules/zone.js/dist/zone.js')
+    script(src='node_modules/reflect-metadata/Reflect.js')
     
     //UI Plugins
     script(src='bower_components/jquery/dist/jquery.js')
@@ -26,19 +22,11 @@ html
     script(src='bower_components/nprogress/nprogress.js')
     
     //Additional Plugins
-    script(src='node_modules/angular2-jwt/angular2-jwt.js')
-    //script(src='node_modules/ng2-ui-auth/export.js')
 
     // Application 
     //- script(src='libs.min.js')
     //- script(src='application.min.js')
+    script(src='systemjs.config.js')
 
     script.
-      System.config({
-        packages: {'app': {defaultExtension: 'js'}},
-        map: {
-          "angular2-jwt": "node_modules/angular2-jwt/angular2-jwt.js"
-        }
-      });
-      System.import('app/bootstrap.js')
-      .then(null, console.error.bind(console));
+      System.import('app').catch(function(err){ console.error(err); });

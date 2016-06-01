@@ -1,9 +1,9 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
-"use stict";
+"use strict";
 
-import { Component } from "angular2/core";
-import { ROUTER_DIRECTIVES, RouteConfig } from "angular2/router";
+import { Component } from "@angular/core";
+import { ROUTER_DIRECTIVES, Routes } from "@angular/router";
 import { HeaderComponent } from "./layout/header.component";
 import { HomeComponent } from "./home/home.component";
 import { ProductsComponent } from "./products/products.component";
@@ -15,11 +15,11 @@ import { NewProductComponent } from "./products/new-product.component";
   templateUrl: "./app/components/app.html",
   directives: [ROUTER_DIRECTIVES, HeaderComponent]
 })
-@RouteConfig([
-  { path: "/home", as: "Home", component: HomeComponent, useAsDefault: true },
-  { path: "/products/:subCategoryId", as: "Products", component: ProductsComponent},
-  { path: "/product/:productId", as: "ProductDetail", component: ProductDetailsComponent},
-  { path: "/product/new", as: "NewProductComponent", component: NewProductComponent}
+@Routes([
+  { path: "/", component: HomeComponent},
+  { path: "/products/:subCategoryId", component: ProductsComponent},
+  { path: "/product/:productId", component: ProductDetailsComponent},
+  { path: "/product/new", component: NewProductComponent}
 ])
 export class AppComponent {
   constructor() {
