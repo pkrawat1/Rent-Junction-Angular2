@@ -1,6 +1,5 @@
-import { Component } from "angular2/core";
-import { CORE_DIRECTIVES } from "angular2/common";
-import { RouterLink } from "angular2/router";
+import { Component } from "@angular/core";
+import { CORE_DIRECTIVES } from "@angular/common";
 import { DataService } from "../../services/data.service";
 import { ThumbnailPipe } from "../../pipes/thumbnail.pipe";
 import { Category } from "../../interfaces/category";
@@ -9,7 +8,7 @@ import { SubCategoryComponent } from "../sub-category/sub-category.component";
 
 @Component({
   selector: "home",
-  directives: [CORE_DIRECTIVES, RouterLink, CategoryComponent, SubCategoryComponent],
+  directives: [CORE_DIRECTIVES, CategoryComponent, SubCategoryComponent],
   providers: [DataService],
   pipes: [ThumbnailPipe],
   templateUrl: "./app/components/home/home.html"

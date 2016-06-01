@@ -5,9 +5,9 @@
     .medium-10.columns
       | To Buy or Find anything select an option below:
     .medium-2.columns.text-right
-      button.button.hollow.drop-shadow.move-right(
+      a.button.hollow.drop-shadow.move-right(
         *ngIf="isAuthenticated()",
-        [routerLink]= '["NewProductComponent"]'
+        [routerLink]= '["/product_new"]'
       ) New Product
   hr
 
@@ -34,5 +34,5 @@
         .column.text-center.fx-fade-left.fx-easing-sine.fx-speed-500(
           *ngFor= '#sub_category of selectedCategory.sub_categories'
           )
-          a([routerLink]= '["Products", {subCategoryId: sub_category._id}]')
+          a([routerLink]= "['/products', sub_category._id]")
             show-sub-category([sub_category]= 'sub_category')

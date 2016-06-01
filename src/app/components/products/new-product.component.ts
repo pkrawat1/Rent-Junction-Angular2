@@ -1,11 +1,11 @@
-import {Component} from "angular2/core";
-import {FORM_PROVIDERS, FormBuilder, Validators} from "angular2/common";
+import {Component} from "@angular/core";
+import {FORM_PROVIDERS, FormBuilder, Validators} from "@angular/common";
 import {Product} from "../../interfaces/product";
 import { Category } from "../../interfaces/category";
 import { DataService } from "../../services/data.service";
-import {RouterLink, RouteParams, Router} from "angular2/router";
+import {RouteSegment, Router} from "@angular/router";
 import { ThumbnailPipe } from "../../pipes/thumbnail.pipe";
-import { Http, Response, Headers } from "angular2/http";
+import { Http, Response, Headers } from "@angular/http";
 import {ControlMessages} from "../../directives/control-messages.component";
 import {ValidationService} from "../../services/validation.service";
 import {AuthService} from "../../services/auth.service";
@@ -14,7 +14,7 @@ import {AuthService} from "../../services/auth.service";
 @Component({
   selector: "new-product",
   templateUrl: "./app/components/products/new-product.html",
-  directives: [RouterLink, ControlMessages],
+  directives: [ControlMessages],
   pipes: [ThumbnailPipe],
   providers: [DataService, AuthService]
 })
@@ -87,7 +87,7 @@ export class NewProductComponent {
     .subscribe((data) => {
       if (data.json().status) {
         toastr.success("Product Saved Successfully");
-        this.router.parent.navigate(["ProductDetail", {productId: data.json().product_id}]);
+        this.router.navigate(["/product/", data.json().product_id]);
       }
       else {
         toastr.error("Invalid/Empty Data Entered");
