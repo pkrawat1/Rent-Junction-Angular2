@@ -19,23 +19,30 @@ module.exports = (grunt) ->
 
     scripts:
       libs: [
-          'node_modules/es6-shim/es6-shim.js'
-          'node_modules/angular2/bundles/angular2-polyfills.js'
-          'node_modules/systemjs/dist/system.src.js'
-          'node_modules/typescript/lib/typescript.js'
-          'node_modules/rxjs/bundles/Rx.js'
-          'node_modules/angular2/bundles/*.dev.js',
-          'node_modules/angular2-jwt/angular2-jwt.js',
-          'node_modules/angular2-jwt/angular2-jwt.js.map',
+          "node_modules/@angular/common/**/*",
+          "node_modules/@angular/compiler/**/*",
+          "node_modules/@angular/core/**/*",
+          "node_modules/@angular/http/**/*",
+          "node_modules/@angular/platform-browser/**/*",
+          "node_modules/@angular/platform-browser-dynamic/**/*",
+          "node_modules/@angular/router/**/*",
+          "node_modules/@angular/router-deprecated/**/*",
+          "node_modules/@angular/upgrade/**/*",
+          "node_modules/systemjs/dist/system.src.js",
+          "node_modules/systemjs/dist/system-polyfills.js",
+          "node_modules/rxjs/**/*",
+          "node_modules/es6-shim/es6-shim.*",
+          "node_modules/zone.js/dist/zone.js",
+          "node_modules/reflect-metadata/Reflect.*",
           #'node_modules/ng2-ui-auth/export.js'
           'bower_components/jquery/dist/jquery.js',
           'bower_components/toastr/toastr.js',
           'bower_components/what-input/what-input.js',
           'bower_components/foundation-sites/dist/foundation.js',
           'bower_components/nprogress/nprogress.js',
+          'systemjs.config.js'
         ]
       app: [
-        'build/boot.js'
         'build/app/components/{,*/}{,*/}*.js'
         'build/app/shared/{,*/}{,*/}*.js'
       ]

@@ -8,5 +8,5 @@ small
   | Mft. {{product.mft_date}}
 p {{product.desc}}
 a.button.hollow.expanded(
-  [routerLink]='["ProductDetail", {productId: product._id}]'
+  [routerLink]='["/product/", product._id]'
   ) Buy Now
