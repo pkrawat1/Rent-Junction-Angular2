@@ -81,7 +81,7 @@ export class NewProductComponent {
     }
 
     this.http.post("http://localhost:3000/api/v1/products",
-      JSON.stringify({product: this.product_form.value, logo: $("form input[type=file]").prop("files")[0]}),
+      JSON.stringify({product: this.product_form.value }),
       {headers: headers}
     )
     .subscribe((data) => {
